@@ -1,0 +1,50 @@
+# macOS / Windows noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local agent/runtime caches
+.agents/
+.codex/
+.venv/
+venv/
+node_modules/
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*token*
+*cookie*
+*secret*
+*credentials*
+
+# Private or raw local-only materials
+02_素材与资料/私密参考/
+02_素材与资料/待整理/
+90_归档/
+
+# Large media / generated assets
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.wav
+*.mp3
+*.aac
+*.flac
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.psd
+*.zip
+*.rar
+*.7z
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+~$*
