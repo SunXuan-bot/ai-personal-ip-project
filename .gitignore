@@ -27,6 +27,7 @@ node_modules/
 
 # Large media / generated assets
 *.mp4
+*.m4v
 *.mov
 *.mkv
 *.avi

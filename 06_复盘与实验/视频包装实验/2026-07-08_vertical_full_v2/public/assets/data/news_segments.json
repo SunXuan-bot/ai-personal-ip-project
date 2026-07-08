@@ -1,0 +1,139 @@
+[
+  {
+    "id": "open",
+    "start": 0.16,
+    "end": 4.6,
+    "number": "",
+    "title": "每天 1 分钟，筛几条 AI 信息",
+    "note": "开场",
+    "source": "剪映字幕时间轴",
+    "visualType": "none",
+    "cues": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "deepcode",
+    "start": 4.66,
+    "end": 18.8,
+    "number": "01",
+    "title": "DeepSeek 文档收录 Deep Code",
+    "note": "开源终端 AI 编程助手，支持 Agent Skills",
+    "source": "DeepSeek Docs + GitHub",
+    "visualType": "screenshot",
+    "cues": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  {
+    "id": "officecli",
+    "start": 18.8,
+    "end": 43.5,
+    "number": "02",
+    "title": "OfficeCLI：AI 处理办公文件",
+    "note": "Word / Excel / PPT，无需本机 Office",
+    "source": "GitHub iOfficeAI/OfficeCLI",
+    "visualType": "screenshot",
+    "cues": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ]
+  },
+  {
+    "id": "claude",
+    "start": 43.5,
+    "end": 55.03,
+    "number": "03",
+    "title": "Claude Code 更新工作流规模设置",
+    "note": "动态调整 agent 数量倾向",
+    "source": "Claude Code changelog，待截图复核",
+    "visualType": "source-card",
+    "cues": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ]
+  },
+  {
+    "id": "jobs",
+    "start": 55.03,
+    "end": 72.3,
+    "number": "04",
+    "title": "初级程序员岗位影响再被讨论",
+    "note": "研究与 HN 讨论线索，不是单一结论",
+    "source": "Hacker News / 研究文章，待截图复核",
+    "visualType": "source-card",
+    "cues": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ]
+  },
+  {
+    "id": "funasr",
+    "start": 72.3,
+    "end": 92.5,
+    "number": "05",
+    "title": "Fun-ASR-Realtime 发布",
+    "note": "30 种语言 / 16 种方言 / API 上线百炼",
+    "source": "阿里云百炼 / 通义实验室，待截图复核",
+    "visualType": "screenshot",
+    "cues": [
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ]
+  },
+  {
+    "id": "close",
+    "start": 92.5,
+    "end": 97.2,
+    "number": "",
+    "title": "明天继续看 AI 圈新东西",
+    "note": "收束",
+    "source": "剪映字幕时间轴",
+    "visualType": "none",
+    "cues": [
+      50,
+      51,
+      52,
+      53
+    ]
+  }
+]

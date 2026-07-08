@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI News Vertical Full v1</title>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-700-latin.woff2") format("woff2");
+        font-weight: 700;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "LXGW WenKai TC";
+        src: url("fonts/LXGWWenKaiTC-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #0b0f14;
+        color: #fff;
+        font-family: "Inter", "LXGW WenKai TC", ui-sans-serif, system-ui, sans-serif;
+      }
+
+      #stage {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0b0f14;
+      }
+
+      #talk-video {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+        object-fit: cover;
+      }
+
+      .shade {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(5, 7, 10, 0.52) 0%, rgba(5, 7, 10, 0.08) 30%, rgba(5, 7, 10, 0.18) 58%, rgba(5, 7, 10, 0.78) 100%),
+          linear-gradient(90deg, rgba(5, 7, 10, 0.18), transparent 34%, transparent 72%, rgba(5, 7, 10, 0.22));
+        pointer-events: none;
+      }
+
+      .topbar {
+        position: absolute;
+        left: 42px;
+        right: 42px;
+        top: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        color: #fff;
+      }
+
+      .account {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: rgba(9, 12, 18, 0.68);
+        font-size: 30px;
+        font-weight: 700;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ff5d5d;
+        box-shadow: 0 0 18px rgba(255, 93, 93, 0.8);
+      }
+
+      .series {
+        padding: 12px 16px;
+        border-radius: 16px;
+        background: #ffd166;
+        color: #15130f;
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      .news-card {
+        position: absolute;
+        left: 42px;
+        right: 42px;
+        top: 144px;
+        min-height: 330px;
+        padding: 30px 32px 28px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 26px;
+        background: rgba(247, 244, 236, 0.94);
+        color: #17140f;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      .card-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .card-kicker {
+        color: #316ad7;
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      .card-source {
+        color: rgba(23, 20, 15, 0.72);
+        font-size: 21px;
+      }
+
+      .news-card h1 {
+        margin: 0;
+        font-size: 56px;
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .news-card p {
+        margin: 18px 0 0;
+        color: rgba(23, 20, 15, 0.72);
+        font-size: 30px;
+        line-height: 1.35;
+      }
+
+      .metric-row {
+        display: flex;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .metric {
+        flex: 1;
+        padding: 16px 18px;
+        border-radius: 18px;
+        background: #17140f;
+        color: #fff;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 38px;
+        line-height: 1;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 8px;
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 18px;
+      }
+
+      .caption {
+        position: absolute;
+        left: 54px;
+        right: 54px;
+        bottom: 184px;
+        min-height: 118px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 22px 28px;
+        border-radius: 24px;
+        background: rgba(7, 10, 15, 0.78);
+        color: #fff;
+        font-size: 38px;
+        line-height: 1.32;
+        text-align: center;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+      }
+
+      .bottom-rail {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 0 40px;
+        background: #ffd166;
+        color: #17140f;
+        font-size: 25px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .progress {
+        position: absolute;
+        left: 42px;
+        right: 42px;
+        bottom: 116px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.22);
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        width: 0;
+        height: 100%;
+        border-radius: 999px;
+        background: #ffd166;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="ai-news-vertical-full-v1"
+      data-start="0"
+      data-duration="97.27"
+      data-fps="30"
+      data-width="1080"
+      data-height="1920"
+    >
+      <video
+        id="talk-video"
+        src="assets/input-video.mp4"
+        playsinline
+        data-has-audio="true"
+        data-start="0"
+        data-duration="97.27"
+        data-track-index="1"
+      ></video>
+      <div class="shade"></div>
+
+      <div class="topbar">
+        <div class="account"><span class="dot"></span><span>武汉AI小孙</span></div>
+        <div class="series">AI NEWS 01</div>
+      </div>
+
+      <article class="news-card" id="card-open">
+        <div class="card-meta">
+          <div class="card-kicker">TODAY'S AI BRIEF</div>
+          <div class="card-source">开场</div>
+        </div>
+        <h1>今天筛几条值得关注的 AI 信息</h1>
+        <p>测试版：完整竖屏包装，字幕时间轴仍为粗对齐。</p>
+      </article>
+
+      <article class="news-card" id="card-deepcode">
+        <div class="card-meta">
+          <div class="card-kicker">DeepSeek / Deep Code</div>
+          <div class="card-source">来源待复核</div>
+        </div>
+        <h1>Deep Code 被 DeepSeek 文档收录</h1>
+        <p>后续这里替换为官方文档截图和 GitHub 页面高亮。</p>
+        <div class="metric-row">
+          <div class="metric"><strong>1600+</strong><span>GitHub stars，待复核</span></div>
+          <div class="metric"><strong>Agent</strong><span>Skills / 推理强度</span></div>
+        </div>
+      </article>
+
+      <article class="news-card" id="card-office">
+        <div class="card-meta">
+          <div class="card-kicker">OfficeCLI</div>
+          <div class="card-source">GitHub 项目页</div>
+        </div>
+        <h1>AI 需要处理真实办公文件</h1>
+        <p>Word、Excel、PPT 这类文件处理能力，才更接近日常工作流。</p>
+        <div class="metric-row">
+          <div class="metric"><strong>8900+</strong><span>GitHub stars，待复核</span></div>
+          <div class="metric"><strong>Office</strong><span>无需本机安装</span></div>
+        </div>
+      </article>
+
+      <article class="news-card" id="card-claude">
+        <div class="card-meta">
+          <div class="card-kicker">Claude Code</div>
+          <div class="card-source">2.1.202</div>
+        </div>
+        <h1>工作流里的 agent 数量开始可调</h1>
+        <p>动态工作流规模、远程控制、语音听写、技能加载修复。</p>
+      </article>
+
+      <article class="news-card" id="card-jobs">
+        <div class="card-meta">
+          <div class="card-kicker">Hacker News</div>
+          <div class="card-source">讨论边界</div>
+        </div>
+        <h1>AI 对初级程序员岗位的影响被热议</h1>
+        <p>这个段落要保留不确定性：这是讨论和文章观点，不是定论。</p>
+      </article>
+
+      <article class="news-card" id="card-asr">
+        <div class="card-meta">
+          <div class="card-kicker">Fun-ASR-Realtime</div>
+          <div class="card-source">通义实验室</div>
+        </div>
+        <h1>语音识别继续走向多语言和方言</h1>
+        <p>会议记录、客服、直播切片、短视频字幕，都值得留意。</p>
+        <div class="metric-row">
+          <div class="metric"><strong>30</strong><span>种语言，待复核</span></div>
+          <div class="metric"><strong>16</strong><span>种方言，待复核</span></div>
+        </div>
+      </article>
+
+      <article class="news-card" id="card-close">
+        <div class="card-meta">
+          <div class="card-kicker">小孙判断</div>
+          <div class="card-source">收束</div>
+        </div>
+        <h1>重点是：AI 正在进入真实工作流</h1>
+        <p>不只是聊天，而是编程、办公文件、语音识别这些具体环节。</p>
+      </article>
+
+      <div class="caption" id="caption">每天一分钟，小孙帮你筛几条今天值得关注的 AI 信息。</div>
+      <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="bottom-rail">
+        <span>DeepSeek</span>
+        <span>OfficeCLI</span>
+        <span>Claude Code</span>
+        <span>Hacker News</span>
+        <span>Fun-ASR-Realtime</span>
+      </div>
+
+      <script src="vendor/gsap.min.js"></script>
+      <script>
+        (function () {
+          const DURATION = 97.27;
+          const tl = window.gsap.timeline({ paused: true });
+          const cards = [
+            ["#card-open", 0.8, 7.6],
+            ["#card-deepcode", 7.8, 23.2],
+            ["#card-office", 23.6, 40.0],
+            ["#card-claude", 45.0, 56.8],
+            ["#card-jobs", 57.2, 73.6],
+            ["#card-asr", 74.0, 91.2],
+            ["#card-close", 91.4, 96.8],
+          ];
+
+          const captions = [
+            [0, "每天一分钟，小孙帮你筛几条今天值得关注的 AI 信息。"],
+            [7.8, "DeepSeek 官方文档收录了 Deep Code 集成。"],
+            [14.5, "它支持深度思考、推理强度控制和 Agent Skills。"],
+            [23.6, "AI 办公工具 OfficeCLI 在 GitHub 上热度也不低。"],
+            [31.2, "它可以读取、编辑和自动处理 Word、Excel、PPT 文件。"],
+            [40.2, "AI 不能只会生成文字，还得能处理真正用到的文件。"],
+            [45.0, "Claude Code 发布了 2.1.202 版本。"],
+            [53.2, "这次更新增加了动态工作流规模设置。"],
+            [57.2, "AI 对初级程序员就业的影响，又被拿出来讨论。"],
+            [66.0, "入门级岗位招聘减少，智能体编程是重要原因之一。"],
+            [74.0, "Fun-ASR-Realtime 发布，语音识别继续往多语言和方言场景走。"],
+            [82.0, "支持 30 种语言和 16 种方言，API 已上线阿里云百炼。"],
+            [90.0, "如果你做会议记录、客服、直播切片，或者短视频字幕，这类能力值得留意。"],
+            [95.0, "我是小孙，明天继续帮你看 AI 圈有什么值得关注的新东西。"],
+          ];
+
+          cards.forEach(([selector, start, end]) => {
+            tl.to(selector, { opacity: 1, y: 0, duration: 0.42, ease: "power2.out" }, start);
+            tl.to(selector, { opacity: 0, y: -20, duration: 0.3, ease: "power2.in" }, end - 0.3);
+          });
+
+          captions.forEach(([time, text], index) => {
+            tl.call(
+              () => {
+                document.querySelector("#caption").textContent = text;
+              },
+              [],
+              time,
+            );
+            if (index > 0) {
+              tl.fromTo(
+                "#caption",
+                { opacity: 0.45, y: 10 },
+                { opacity: 1, y: 0, duration: 0.24, ease: "power2.out" },
+                time,
+              );
+            }
+          });
+
+          tl.to("#progress-fill", { width: "100%", duration: DURATION, ease: "none" }, 0);
+          tl.fromTo(".topbar", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5 }, 0.2);
+          tl.fromTo(".bottom-rail", { y: 88 }, { y: 0, duration: 0.5, ease: "power2.out" }, 0.4);
+
+          window.__timelines = window.__timelines || {};
+          window.__timelines["ai-news-vertical-full-v1"] = tl;
+        })();
+      </script>
+    </div>
+  </body>
+</html>
