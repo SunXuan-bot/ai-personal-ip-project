@@ -63,6 +63,22 @@
 4. 不能确定的，写入 `DISCUSSION_QUEUE.md`，必要时直接问用户。
 5. 每次完成阶段性工作后，更新 `PROJECT_STATE.md`。
 
+## 跨设备环境准备
+
+另一台电脑继续本项目时，除恢复仓库内容外，还需要安装本项目近期使用的本地技能：
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo zarazhangrui/frontend-slides \
+  --path . \
+  --name frontend-slides
+```
+
+- 目标位置：`~/.codex/skills/frontend-slides`
+- 安装后重启 Codex，让新技能进入可用技能列表。
+- 用途：横屏资讯视频的片头、章节转场、观点卡、新闻卡片、标题帧和 PPT 重设计。
+- 边界：它是视觉包装助手，不负责完整视频时间轴、字幕烧录、音频同步或 MP4 渲染。
+
 ## 隐私边界
 
 - 私密资料只放在 `02_素材与资料/私密参考/`。
