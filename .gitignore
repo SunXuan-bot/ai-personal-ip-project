@@ -49,3 +49,7 @@ node_modules/
 *.bak
 *.swp
 ~$*
+
+# Local automation logs
+00_项目管理/自动化日志/
+04_脚本与内容/AI资讯日更/自动筛选

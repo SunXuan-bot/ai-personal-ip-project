@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.sunxuan.ai-news-scan</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/sunxuan/.codex/automations/ai-news-scan/ai_news_scan.py</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>AI_NEWS_SCAN_PROJECT_ROOT</key>
+    <string>/Users/sunxuan/Desktop/codex工作区/个人自媒体/AI个人IP项目</string>
+    <key>AI_NEWS_SCAN_OUTPUT_DIR</key>
+    <string>/Users/sunxuan/.codex/automations/ai-news-scan/output</string>
+    <key>AI_NEWS_SCAN_LOG_DIR</key>
+    <string>/Users/sunxuan/.codex/automations/ai-news-scan/logs</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Hour</key>
+      <integer>10</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+    <dict>
+      <key>Hour</key>
+      <integer>17</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/Users/sunxuan/.codex/automations/ai-news-scan/logs/ai_news_scan.launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/sunxuan/.codex/automations/ai-news-scan/logs/ai_news_scan.launchd.err.log</string>
+  <key>WorkingDirectory</key>
+  <string>/Users/sunxuan/Desktop/codex工作区/个人自媒体/AI个人IP项目</string>
+</dict>
+</plist>
