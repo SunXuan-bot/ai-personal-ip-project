@@ -45,6 +45,9 @@
 - `00_项目管理/AI新闻自动筛选定时任务.md`
   - 用途：说明每天 10:00、17:00 自动生成 AI 新闻候选筛选稿的脚本、输出目录、launchd 状态和边界。
 
+- `00_项目管理/外部信源与工具/follow-builders安装与接入记录_2026-07-10.md`
+  - 用途：记录 `zarazhangrui/follow-builders` 的安装位置、验证结果、接入方式和使用边界；作为 AI HOT 之外的 builder 一手动态、播客和官方博客补充信源。
+
 - `02_素材与资料/资讯素材/README_资讯视频素材工作流.md`
   - 用途：说明每期如何优先收集强关联官方视频素材，并存到本地供剪辑软件调用。
 
@@ -65,6 +68,10 @@
 - 涉及隐私、商业合作、内部数据的资料，放入 `02_素材与资料/私密参考/`。
 
 ## 外部趋势资料
+
+- Follow Builders：https://github.com/zarazhangrui/follow-builders
+  - 用途：AI 资讯日更补充信源，优先用于挖 builder 一手观点、X 动态、AI 播客和官方博客线索。
+  - 边界：其中 X 动态属于社交线索，正式口播前仍需回源核验。
 
 - Reuters Institute Digital News Report 2026 Executive Summary：https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary
 - Reuters Institute - How news creators are impacting politics and media around the world：https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/how-news-creators-are-impacting-politics-and-media-around-world

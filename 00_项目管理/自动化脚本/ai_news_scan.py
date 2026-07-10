@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch AI HOT selected items and write a local review draft."""
+"""Fetch AI news source candidates and write a local review draft."""
 
 from __future__ import annotations
 
@@ -34,6 +34,15 @@ LOG_DIR = Path(
     )
 )
 BASE_URL = "https://aihot.virxact.com/api/public/items"
+FOLLOW_BUILDERS_X_URL = (
+    "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json"
+)
+FOLLOW_BUILDERS_PODCASTS_URL = (
+    "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-podcasts.json"
+)
+FOLLOW_BUILDERS_BLOGS_URL = (
+    "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-blogs.json"
+)
 UA = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 "
@@ -67,6 +76,108 @@ def fetch_items(hours: int = 24, take: int = 80) -> list[dict]:
     with urllib.request.urlopen(req, timeout=30) as resp:
         data = json.loads(resp.read().decode("utf-8"))
     return data.get("items", [])
+
+
+def fetch_json_url(url: str, timeout: int = 30) -> dict:
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": UA, "Accept": "application/json"},
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def shorten(text: str, limit: int = 360) -> str:
+    text = re.sub(r"\s+", " ", text or "").strip()
+    if len(text) <= limit:
+        return text
+    return text[: limit - 1].rstrip() + "..."
+
+
+def fetch_follow_builders_items() -> tuple[list[dict], list[str]]:
+    items: list[dict] = []
+    notes: list[str] = []
+
+    try:
+        feed_x = fetch_json_url(FOLLOW_BUILDERS_X_URL)
+        x_errors = feed_x.get("errors") or []
+        notes.extend(f"Follow Builders X：{err}" for err in x_errors)
+        tweet_items: list[dict] = []
+        for account in feed_x.get("x") or []:
+            name = account.get("name") or account.get("handle") or "AI builder"
+            handle = account.get("handle") or ""
+            for tweet in account.get("tweets") or []:
+                text = tweet.get("text") or ""
+                if not text:
+                    continue
+                engagement = (
+                    int(tweet.get("likes") or 0)
+                    + 2 * int(tweet.get("retweets") or 0)
+                    + int(tweet.get("replies") or 0)
+                )
+                tweet_items.append(
+                    {
+                        "title": f"{name}: {shorten(text, 90)}",
+                        "summary": shorten(text, 520),
+                        "sourceName": f"Follow Builders / X / @{handle}",
+                        "sourceUrl": tweet.get("url") or "",
+                        "publishedAt": tweet.get("createdAt") or "",
+                        "category": "builder-x",
+                        "signalSource": "Follow Builders",
+                        "engagementScore": engagement,
+                    }
+                )
+        tweet_items.sort(
+            key=lambda item: (item.get("publishedAt") or "", item.get("engagementScore") or 0),
+            reverse=True,
+        )
+        items.extend(tweet_items[:40])
+    except Exception as exc:
+        notes.append(f"Follow Builders X 拉取失败：{type(exc).__name__}: {exc}")
+
+    try:
+        feed_podcasts = fetch_json_url(FOLLOW_BUILDERS_PODCASTS_URL)
+        podcast_errors = feed_podcasts.get("errors") or []
+        notes.extend(f"Follow Builders Podcast：{err}" for err in podcast_errors)
+        for episode in (feed_podcasts.get("podcasts") or [])[:8]:
+            transcript = episode.get("transcript") or ""
+            title = episode.get("title") or episode.get("name") or "未命名播客"
+            items.append(
+                {
+                    "title": title,
+                    "summary": shorten(transcript, 650),
+                    "sourceName": f"Follow Builders / Podcast / {episode.get('name') or '未知节目'}",
+                    "sourceUrl": episode.get("url") or "",
+                    "publishedAt": episode.get("publishedAt") or "",
+                    "category": "builder-podcast",
+                    "signalSource": "Follow Builders",
+                }
+            )
+    except Exception as exc:
+        notes.append(f"Follow Builders Podcast 拉取失败：{type(exc).__name__}: {exc}")
+
+    try:
+        feed_blogs = fetch_json_url(FOLLOW_BUILDERS_BLOGS_URL)
+        blog_errors = feed_blogs.get("errors") or []
+        notes.extend(f"Follow Builders Blog：{err}" for err in blog_errors)
+        for blog in (feed_blogs.get("blogs") or [])[:12]:
+            title = blog.get("title") or blog.get("name") or "未命名博客"
+            summary = blog.get("summary") or blog.get("content") or blog.get("excerpt") or ""
+            items.append(
+                {
+                    "title": title,
+                    "summary": shorten(summary, 520),
+                    "sourceName": f"Follow Builders / Blog / {blog.get('sourceName') or blog.get('name') or '官方博客'}",
+                    "sourceUrl": blog.get("url") or blog.get("sourceUrl") or "",
+                    "publishedAt": blog.get("publishedAt") or blog.get("date") or "",
+                    "category": "builder-blog",
+                    "signalSource": "Follow Builders",
+                }
+            )
+    except Exception as exc:
+        notes.append(f"Follow Builders Blog 拉取失败：{type(exc).__name__}: {exc}")
+
+    return items, notes
 
 
 AI_BIG_WORDS = [
@@ -194,6 +305,10 @@ def published_at(item: dict) -> str:
     return item.get("publishedAt") or item.get("createdAt") or ""
 
 
+def signal_source(item: dict) -> str:
+    return item.get("signalSource") or "AI HOT"
+
+
 def score_item(item: dict) -> tuple[int, list[str], list[str]]:
     txt = text_of(item)
     score = 0
@@ -215,6 +330,17 @@ def score_item(item: dict) -> tuple[int, list[str], list[str]]:
     elif category == "paper":
         score += 1
         cautions.append("论文类需要确认能否快速讲清")
+    elif category == "builder-x":
+        score += 2
+        reasons.append("来自 AI builder 一手动态/观点，适合挖选题线索")
+        cautions.append("社交平台线索，正式口播前需回源或找到官方公告核验")
+    elif category == "builder-podcast":
+        score += 2
+        reasons.append("来自 AI builder 长访谈/播客，适合挖观点和背景")
+        cautions.append("播客更适合观点背景，不一定是当天新闻")
+    elif category == "builder-blog":
+        score += 4
+        reasons.append("来自官方/准官方博客，可信度和解释价值较高")
 
     if big_hits:
         score += min(5, len(set(big_hits)))
@@ -266,7 +392,7 @@ def clean_md(text: str) -> str:
     return text.replace("|", "\\|")
 
 
-def write_markdown(items: list[dict], run_time: datetime) -> Path:
+def write_markdown(items: list[dict], run_time: datetime, source_notes: list[str]) -> Path:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     slot = "1000" if run_time.hour < 13 else "1700"
     out_path = OUTPUT_DIR / f"{run_time:%Y-%m-%d}_{slot}_AI新闻候选筛选.md"
@@ -279,11 +405,24 @@ def write_markdown(items: list[dict], run_time: datetime) -> Path:
 
     top = scored[:6]
     backup = scored[6:16]
+    follow_builder_pool = [
+        row for row in scored if signal_source(row[1]) == "Follow Builders"
+    ][:10]
 
     lines: list[str] = []
     lines.append(f"# {run_time:%Y-%m-%d %H:%M} AI 新闻候选筛选")
     lines.append("")
     lines.append("自动任务：每天 10:00、17:00 生成。")
+    lines.append("")
+    lines.append("## 本次信源状态")
+    lines.append("")
+    lines.append("- AI HOT：已尝试拉取最近 24 小时精选。")
+    lines.append("- Follow Builders：已尝试拉取 builder X 动态、AI 播客和官方博客中央 feed。")
+    if source_notes:
+        for note in source_notes:
+            lines.append(f"- 注意：{clean_md(note)}")
+    else:
+        lines.append("- 注意：本次外部信源没有返回显式错误；仍需发布前回源核验。")
     lines.append("")
     lines.append("## 筛选原则")
     lines.append("")
@@ -296,7 +435,7 @@ def write_markdown(items: list[dict], run_time: datetime) -> Path:
     lines.append("")
 
     if not top:
-        lines.append("本次没有拉到 AI HOT 精选条目，请检查网络或稍后重试。")
+        lines.append("本次没有拉到 AI HOT / Follow Builders 候选条目，请检查网络或稍后重试。")
     for idx, (score, item, reasons, cautions) in enumerate(top, start=1):
         title = clean_md(item_title(item))
         summary = clean_md(item_summary(item))
@@ -306,6 +445,7 @@ def write_markdown(items: list[dict], run_time: datetime) -> Path:
         lines.append(f"### {idx}. {title}")
         lines.append("")
         lines.append(f"- 定位：{classify_rank(idx)}")
+        lines.append(f"- 信源：{clean_md(signal_source(item))}")
         lines.append(f"- 初筛分：{score}")
         lines.append(f"- 来源：{source}")
         lines.append(f"- 发布时间：{pub or '待确认'}")
@@ -323,8 +463,31 @@ def write_markdown(items: list[dict], run_time: datetime) -> Path:
         title = clean_md(item_title(item))
         url = source_url(item)
         source = clean_md(source_name(item))
+        signal = clean_md(signal_source(item))
         reason = "；".join(reasons[:2]) if reasons else "待人工判断"
-        lines.append(f"{idx}. {title}｜{source}｜分数 {score}｜{reason}｜{url}")
+        lines.append(f"{idx}. {title}｜{signal}｜{source}｜分数 {score}｜{reason}｜{url}")
+
+    lines.append("")
+    lines.append("## Follow Builders 线索池")
+    lines.append("")
+    lines.append("这些更像 builder 一手动态、观点和长内容线索，不默认等同于可直接口播的新闻；适合从中挖主新闻角度、补充判断或找官方来源。")
+    lines.append("")
+    if not follow_builder_pool:
+        lines.append("本次没有拉到 Follow Builders 线索。")
+    for idx, (score, item, reasons, cautions) in enumerate(follow_builder_pool, start=1):
+        title = clean_md(item_title(item))
+        source = clean_md(source_name(item))
+        pub = clean_md(published_at(item))
+        url = source_url(item)
+        reason = "；".join(reasons[:2]) if reasons else "待人工判断"
+        caution = "；".join(cautions[:2]) if cautions else "发布前仍需回源核验"
+        lines.append(f"{idx}. {title}")
+        lines.append(f"   - 来源：{source}")
+        lines.append(f"   - 发布时间：{pub or '待确认'}")
+        lines.append(f"   - 分数：{score}")
+        lines.append(f"   - 可挖角度：{clean_md(reason)}")
+        lines.append(f"   - 边界：{clean_md(caution)}")
+        lines.append(f"   - 链接：{url or '待补'}")
 
     lines.append("")
     lines.append("## 训练反馈区")
@@ -355,9 +518,13 @@ def main() -> int:
     run_time = now_local()
     log_path = LOG_DIR / "ai_news_scan.log"
     try:
+        source_notes: list[str] = []
         items = fetch_items()
-        out_path = write_markdown(items, run_time)
-        msg = f"{run_time.isoformat()} OK wrote {out_path} items={len(items)}\n"
+        follow_items, follow_notes = fetch_follow_builders_items()
+        items.extend(follow_items)
+        source_notes.extend(follow_notes)
+        out_path = write_markdown(items, run_time, source_notes)
+        msg = f"{run_time.isoformat()} OK wrote {out_path} items={len(items)} follow_builders={len(follow_items)}\n"
         log_path.open("a", encoding="utf-8").write(msg)
         print(msg, end="")
         return 0
