@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI个人IP项目动态工作流看板</title>
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --surface: #fffdf8;
+      --surface-2: #f0f5f2;
+      --ink: #222426;
+      --muted: #666a6d;
+      --line: #d8d3c8;
+      --line-strong: #a7a198;
+      --green: #2d765f;
+      --blue: #2d5f88;
+      --red: #a9423c;
+      --gold: #a66a22;
+      --purple: #5d4d83;
+      --shadow: 0 18px 48px rgba(38, 34, 24, .10);
+      --radius: 8px;
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,0) 280px),
+        var(--bg);
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
+
+    .app {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 28px 22px 44px;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .72fr);
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 920px;
+    }
+
+    .meta-card,
+    .panel,
+    .summary,
+    .flow-card,
+    .report-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .meta-card {
+      padding: 14px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric b {
+      display: block;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .summary-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .summary {
+      padding: 14px;
+      min-height: 104px;
+    }
+
+    .summary .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .summary .value {
+      display: block;
+      margin: 7px 0 5px;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .summary .note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 20px 0 16px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, .72);
+    }
+
+    .segmented {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 7px;
+      padding: 8px 11px;
+      cursor: pointer;
+      min-height: 38px;
+    }
+
+    .btn:hover {
+      border-color: var(--line-strong);
+    }
+
+    .btn[aria-pressed="true"] {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--surface);
+    }
+
+    .select-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    select {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--surface);
+      color: var(--ink);
+      padding: 7px 10px;
+    }
+
+    .section-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 16px;
+    }
+
+    .section-lead {
+      margin: -4px 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .workflow-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .flow-card {
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr);
+      gap: 14px;
+      padding: 15px;
+      position: relative;
+    }
+
+    .flow-card.hidden {
+      display: none;
+    }
+
+    .flow-card::before {
+      content: "";
+      position: absolute;
+      left: 54px;
+      top: 58px;
+      bottom: -15px;
+      width: 2px;
+      background: var(--line-strong);
+    }
+
+    .flow-card:last-child::before {
+      display: none;
+    }
+
+    .flow-index {
+      position: relative;
+      z-index: 1;
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .flow-main {
+      min-width: 0;
+    }
+
+    .flow-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .flow-desc {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 12px;
+      line-height: 1.2;
+      border: 1px solid currentColor;
+      white-space: nowrap;
+    }
+
+    .status.done { color: var(--green); background: rgba(45, 118, 95, .08); }
+    .status.running { color: var(--blue); background: rgba(45, 95, 136, .08); }
+    .status.partial { color: var(--gold); background: rgba(166, 106, 34, .09); }
+    .status.blocked { color: var(--red); background: rgba(169, 66, 60, .08); }
+    .status.candidate { color: var(--purple); background: rgba(93, 77, 131, .08); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      border-radius: 999px;
+      padding: 4px 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.15;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 1.1fr) minmax(220px, .9fr) minmax(220px, .9fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .mini-box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(240, 245, 242, .64);
+      padding: 12px;
+      min-height: 100%;
+    }
+
+    .mini-box h4 {
+      margin: 0 0 9px;
+      font-size: 14px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .plain-list,
+    .output-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .plain-list li + li,
+    .output-list li + li {
+      margin-top: 6px;
+    }
+
+    .output-list a {
+      font-weight: 700;
+    }
+
+    .path {
+      display: block;
+      margin-top: 2px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 11px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .gantt-wrap {
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .gantt {
+      min-width: 1040px;
+      display: grid;
+      grid-template-columns: 210px minmax(820px, 1fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .gantt-label,
+    .gantt-track,
+    .gantt-months,
+    .gantt-scale {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gantt-label {
+      padding: 10px 12px;
+      background: var(--surface-2);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .gantt-months,
+    .gantt-scale,
+    .gantt-track {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(93, minmax(8px, 1fr));
+    }
+
+    .month {
+      padding: 10px 8px;
+      border-left: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tick {
+      min-height: 34px;
+      border-left: 1px solid rgba(216, 211, 200, .42);
+      color: var(--muted);
+      font-size: 11px;
+      padding-top: 9px;
+      text-align: center;
+    }
+
+    .gantt-task-label {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .gantt-task-label strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink);
+    }
+
+    .gantt-task-label span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .gantt-track {
+      align-items: center;
+      min-height: 56px;
+      background:
+        repeating-linear-gradient(90deg, transparent 0, transparent calc((100% / 93) - 1px), rgba(216, 211, 200, .32) calc((100% / 93) - 1px), rgba(216, 211, 200, .32) calc(100% / 93));
+    }
+
+    .bar {
+      grid-row: 1;
+      height: 26px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      color: #fffdf8;
+      font-size: 12px;
+      font-weight: 700;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .bar.core { background: var(--green); }
+    .bar.workflow { background: var(--blue); }
+    .bar.review { background: var(--gold); }
+    .bar.content { background: var(--purple); }
+    .bar.risk { background: var(--red); }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .report-card {
+      padding: 14px;
+    }
+
+    .report-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .report-card p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .report-table th,
+    .report-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .report-table th {
+      color: var(--muted);
+      font-weight: 700;
+      background: rgba(240, 245, 242, .72);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .event {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .event time {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .event-body {
+      border-left: 2px solid var(--line-strong);
+      padding-left: 12px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .event-body strong {
+      color: var(--ink);
+    }
+
+    .footer-note {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1040px) {
+      .topbar,
+      .flow-grid,
+      .report-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .app {
+        padding: 18px 12px 30px;
+      }
+
+      .summary-row,
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-card {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-card::before {
+        left: 31px;
+        top: 78px;
+      }
+
+      .event {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app" id="workflowApp">
+    <section class="topbar" aria-labelledby="pageTitle">
+      <div>
+        <h1 id="pageTitle">AI个人IP项目动态工作流看板</h1>
+        <p class="subtitle">这个 HTML 作为项目主控台：工作流、产物链接、3 个月甘特图、日报/周报/月报都在这里对齐。当前第一期目标是从 0 到 1 跑起来：坚持日更 30 天、跑通工作流、压缩最小成本时间，再用数据和复盘决定下一个 30 天怎么优化。</p>
+      </div>
+      <aside class="meta-card" aria-label="项目总览">
+        <div class="meta-grid">
+          <div class="metric"><b>2026-07-10</b><span>当前排期起点</span></div>
+          <div class="metric"><b>30 天日更</b><span>第一期核心目标</span></div>
+          <div class="metric"><b>90-150 秒</b><span>默认单条视频长度</span></div>
+          <div class="metric"><b>有效AI连接</b><span>长期北极星指标</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="summary-row" aria-label="关键状态汇总">
+      <div class="summary"><span class="label">第一期目标</span><span class="value">0→1</span><span class="note">先跑起来，不追求一开始完美。</span></div>
+      <div class="summary"><span class="label">日更周期</span><span class="value">30天</span><span class="note">2026-07-10 到 2026-08-08 作为参考第一轮。</span></div>
+      <div class="summary"><span class="label">要压缩的成本</span><span class="value">时间</span><span class="note">目标是逐步形成最小可持续制作时间。</span></div>
+      <div class="summary"><span class="label">复盘维度</span><span class="value">4项</span><span class="note">数据、工作流、时间成本、内容创新。</span></div>
+    </section>
+
+    <section class="controls" aria-label="看板筛选">
+      <div class="segmented" role="group" aria-label="状态筛选">
+        <button class="btn" type="button" data-filter="all" aria-pressed="true">全部</button>
+        <button class="btn" type="button" data-filter="done" aria-pressed="false">已跑通</button>
+        <button class="btn" type="button" data-filter="running" aria-pressed="false">进行中</button>
+        <button class="btn" type="button" data-filter="partial" aria-pressed="false">初版/部分</button>
+        <button class="btn" type="button" data-filter="blocked" aria-pressed="false">阻塞</button>
+      </div>
+      <label class="select-wrap">
+        聚焦
+        <select id="focusSelect">
+          <option value="all">完整项目</option>
+          <option value="daily">AI资讯日更</option>
+          <option value="video">视频包装</option>
+          <option value="planning">项目管理</option>
+          <option value="publish">发布复盘</option>
+        </select>
+      </label>
+    </section>
+
+    <div class="section-stack">
+      <section class="panel" aria-labelledby="workflowTitle">
+        <h2 id="workflowTitle">项目工作流瀑布</h2>
+        <p class="section-lead">每个环节默认展开，能直接看到产物文档。点击产物名称可打开对应 Markdown、目录或视频文件；后续新增产物，也优先挂到对应环节下面。</p>
+        <div class="workflow-stack" id="workflowStack"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="ganttTitle">
+        <h2 id="ganttTitle">3 个月项目甘特图</h2>
+        <p class="section-lead">这是参考排期，不是最终定稿。先把“日更 30 天、跑通流程、压缩时间、复盘优化、加入新话题”放到同一条时间线上，后续直接调这里就是调项目。</p>
+        <div class="gantt-wrap">
+          <div class="gantt" id="gantt"></div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="reportTitle">
+        <h2 id="reportTitle">日报 / 周报 / 月报</h2>
+        <p class="section-lead">这里用来把每天实际做了什么，和甘特图里的“应该做什么”对齐。以后每天更新日报，每周做一次周报，每月做阶段复盘。</p>
+        <div class="report-grid" id="reportGrid"></div>
+      </section>
+
+      <section class="panel timeline" aria-label="关键里程碑">
+        <h2>已发生关键里程碑</h2>
+        <div id="timeline"></div>
+      </section>
+    </div>
+
+    <p class="footer-note">维护规则：这个 HTML 是主看板；原始证据、详细 SOP 和素材台账仍保留在 Markdown 与实验目录。每次新增产物、调整排期、完成日报/周报/月报，都优先同步到这里。</p>
+  </main>
+
+  <script>
+    const DATA = {
+      workflows: [
+        {
+          id: "planning",
+          index: 1,
+          title: "项目主控与定位",
+          status: "done",
+          focus: ["planning"],
+          desc: "确定账号不是纯搬运或泛资讯号，而是“武汉AI小孙”这个 AI 领域个人 IP 项目；项目管理入口、决策、状态和协作规则已经成型。",
+          tags: ["主控台", "个人IP", "武汉AI小孙"],
+          outputs: [
+            ["项目状态", "PROJECT_STATE.md"],
+            ["决策记录", "DECISIONS.md"],
+            ["运行手册", "RUNBOOK.md"],
+            ["项目总方案", "01_定位与策略/AI个人IP项目总方案_2026-07-04.md"],
+            ["账号 1 个月预测与 3 个月价值包", "01_定位与策略/2026-07-10_账号1个月预测_市场定位与3个月价值包.md"],
+            ["本看板入口", "00_项目管理/项目动态工作流看板.html"]
+          ],
+          responsibilities: ["用户确认公开人设边界和第一阶段目标", "Codex 维护状态、决策、入口和看板结构"],
+          current: ["已建立长期 Markdown 项目骨架", "当前第一期目标调整为从 0 到 1 跑起来"],
+          next: ["把后续所有工作进度继续沉淀到本 HTML"]
+        },
+        {
+          id: "ideas",
+          index: 2,
+          title: "选题与点子收集",
+          status: "partial",
+          focus: ["daily", "planning"],
+          desc: "将日更资讯、武汉本地信源、Build in Public 过程内容、Hermes 临时灵感拆开管理，避免选题散落在聊天里。",
+          tags: ["点子库", "本地信源", "Hermes"],
+          outputs: [
+            ["7 天冷启动测试表", "03_选题库/7天冷启动测试表.md"],
+            ["武汉 AI 信源表", "03_选题库/武汉AI信源表.md"],
+            ["武汉 AI 公众号抓取方案", "03_选题库/武汉AI公众号抓取方案_2026-07-10.md"],
+            ["公众号线索", "03_选题库/公众号线索/2026-07-10_1517_武汉AI公众号线索.md"],
+            ["点子库汇总", "03_选题库/点子库/_汇总与使用记录.md"],
+            ["Hermes 收集箱", "03_选题库/点子库/_Hermes收集箱.md"],
+            ["Hermes 点子同步方案", "00_项目管理/Hermes点子同步方案_2026-07-10.md"]
+          ],
+          responsibilities: ["用户把路上想法和看到的线索丢进收集箱", "Codex 归类、补来源、转脚本、更新使用记录"],
+          current: ["武汉 AI 公众号线索已跑出 29 条，但只作为线索", "点子库结构已建立"],
+          next: ["每周清一次收集箱，把可拍点子转成正式脚本"]
+        },
+        {
+          id: "candidate",
+          index: 3,
+          title: "每日拉候选",
+          status: "running",
+          focus: ["daily"],
+          desc: "每天从 AI HOT、官方博客、媒体、GitHub、论文页、公众号线索和用户输入中拉 10-30 条候选，先形成可筛选池。",
+          tags: ["AI HOT", "候选池", "自动筛选"],
+          outputs: [
+            ["每日 AI 资讯日更工作流", "04_脚本与内容/AI资讯日更/每日AI资讯日更工作流.md"],
+            ["AI 新闻自动筛选定时任务", "00_项目管理/AI新闻自动筛选定时任务.md"],
+            ["AI 资讯日更 README", "04_脚本与内容/AI资讯日更/README.md"],
+            ["自动筛选输出目录", "04_脚本与内容/AI资讯日更/自动筛选/"]
+          ],
+          responsibilities: ["用户反馈哪些新闻像、不像、不够大、不好讲", "Codex 拉候选、记录来源和建议入选"],
+          current: ["10:00 和 17:00 自动筛选任务已验证", "候选池仍需用户反馈来校准标准"],
+          next: ["将用户每天反馈写回筛选标准"]
+        },
+        {
+          id: "verify",
+          index: 4,
+          title: "筛选与来源核验",
+          status: "running",
+          focus: ["daily"],
+          desc: "默认选 5-6 条，质量不足时少讲；每条都要看重要性、目标用户关系、10-20 秒可讲清程度、来源可信度和画面承载。",
+          tags: ["来源分级", "5-6 条", "宁缺毋滥"],
+          outputs: [
+            ["AI 资讯日更端到端工作流与分工", "00_项目管理/AI资讯日更端到端工作流与分工.md"],
+            ["资讯选择与文案优化记录", "04_脚本与内容/AI资讯日更/AI资讯日更_资讯选择与文案优化记录.md"],
+            ["素材贴合度评分表", "06_复盘与实验/2026-07-09_AI资讯竞品工具与三批视频/04_复盘/素材贴合度评分表.md"]
+          ],
+          responsibilities: ["用户最终拍板当天讲哪些", "Codex 标记主新闻、快讯、备选和可说边界"],
+          current: ["核心胜负手已确定为精准、快速、讲清楚", "微信样本可学习写法，但事实仍需逐条核验"],
+          next: ["每条正式口播前尽量回到官方或可信来源"]
+        },
+        {
+          id: "script",
+          index: 5,
+          title: "口播脚本与录制稿",
+          status: "partial",
+          focus: ["daily"],
+          desc: "日更口播结构从固定 3 条改成“1 条主新闻 + 3-5 条快讯/补充新闻”，默认 90-150 秒。",
+          tags: ["口播", "90-150 秒", "学习者口吻"],
+          outputs: [
+            ["第 1 期录制文本与字幕校对稿", "04_脚本与内容/AI资讯日更/2026-07-08_第1期录制文本与字幕校对稿.md"],
+            ["第 1 天候选池与口播草稿", "04_脚本与内容/AI资讯日更/2026-07-06_第1天_候选池与口播草稿.md"],
+            ["Build in Public 账号过程系列", "04_脚本与内容/Build_in_Public/2026-07-10_账号搭建过程视频选题与脚本方案.md"],
+            ["节目样片制作工作表", "04_脚本与内容/节目样片/样片制作工作表.md"]
+          ],
+          responsibilities: ["用户试读并改成自己说得顺的表达", "Codex 先写事实块，再压缩成口播稿"],
+          current: ["第 1 期录制文本已沉淀", "过程型内容可作为人设第二线"],
+          next: ["30 天内先稳定资讯日更，再逐步加入过程型内容"]
+        },
+        {
+          id: "materials",
+          index: 6,
+          title: "素材包与画面承载",
+          status: "partial",
+          focus: ["daily", "video"],
+          desc: "资讯视频的画面优先级调整为：强关联官方视频 > 官方页面/截图 > 自制信息卡 > AI 生图。",
+          tags: ["官方视频优先", "素材台账", "B-roll"],
+          outputs: [
+            ["资讯视频素材工作流", "02_素材与资料/资讯素材/README_资讯视频素材工作流.md"],
+            ["三批视频批次目录", "06_复盘与实验/2026-07-09_AI资讯竞品工具与三批视频/03_视频批次/"],
+            ["三批实验复盘", "06_复盘与实验/2026-07-09_AI资讯竞品工具与三批视频/04_复盘/2026-07-10_复盘记录.md"],
+            ["最终审计", "06_复盘与实验/2026-07-09_AI资讯竞品工具与三批视频/04_复盘/final_audit_latest.md"]
+          ],
+          responsibilities: ["用户确认素材发布边界", "Codex 搜索官方素材、下载/截图、写素材台账"],
+          current: ["三批横版检查视频已跑通", "当前短板是官方动态素材比例仍不高"],
+          next: ["每期至少给最重要 1 条新闻找强关联官方视频"]
+        },
+        {
+          id: "record",
+          index: 7,
+          title: "录制、粗剪与字幕",
+          status: "partial",
+          focus: ["video"],
+          desc: "第 1 期真人口播已录制并粗剪；后续更推荐用户导出不带字幕视频 + 独立 SRT，让字幕和包装可修。",
+          tags: ["真人口播", "剪映", "SRT"],
+          outputs: [
+            ["测试视频目录", "02_素材与资料/测试视频/"],
+            ["7月8日 SRT", "02_素材与资料/测试视频/7月8日/7月8日.srt"],
+            ["第 1 期字幕校对稿", "04_脚本与内容/AI资讯日更/2026-07-08_第1期录制文本与字幕校对稿.md"]
+          ],
+          responsibilities: ["用户录制、粗剪、人工校对字幕", "Codex 检查术语、拆新闻时间段、对齐包装点"],
+          current: ["第 1 期剪映字幕存在烧录错误", "HyperFrames v2 不覆盖已烧录字幕"],
+          next: ["发布版先重新导出无字幕视频 + 独立 SRT"]
+        },
+        {
+          id: "package",
+          index: 8,
+          title: "视频包装与成片实验",
+          status: "running",
+          focus: ["video"],
+          desc: "HyperFrames 已跑通 12 秒横屏小样、97 秒竖屏 v1/v2；但用户判断 v2 仍离成品有距离。",
+          tags: ["HyperFrames", "标题卡", "信息卡"],
+          outputs: [
+            ["HyperFrames 包装实验记录", "06_复盘与实验/视频包装实验/2026-07-08_第1期HyperFrames包装实验.md"],
+            ["竖屏 v1 视觉包装审查", "06_复盘与实验/视频包装实验/2026-07-08_vertical_full_v1_视觉包装优化审查.md"],
+            ["竖屏 v2 README", "06_复盘与实验/视频包装实验/2026-07-08_vertical_full_v2/README.md"],
+            ["竖屏 v2 输出视频", "06_复盘与实验/视频包装实验/2026-07-08_vertical_full_v2/output-vertical-full-v2.mp4"],
+            ["frontend-slides 评估资料", "frontend-slides评估/资料/frontend-slides-视频包装评估.md"]
+          ],
+          responsibilities: ["用户判断画面节奏和最终审美", "Codex 做包装层、标题卡、信息卡、渲染校验"],
+          current: ["技术链路能跑通", "成片感和素材丰富度仍需优化"],
+          next: ["用一条 30-60 秒不敏感视频测试更省时的剪辑/包装路径"]
+        },
+        {
+          id: "publish",
+          index: 9,
+          title: "封面、发布资料包与发布",
+          status: "blocked",
+          focus: ["publish"],
+          desc: "封面标题和发布资料包规范已建立，但第 1 期尚未进入正式发布闭环；发布平台和发布时间仍需用户确认。",
+          tags: ["封面", "发布资料包", "平台"],
+          outputs: [
+            ["封面标题工作流", "05_发布与数据/封面与标题/README_封面与标题工作流.md"],
+            ["封面标题模板", "05_发布与数据/封面与标题/TEMPLATE_封面标题方案.md"],
+            ["发布资料包规范", "05_发布与数据/发布资料包/README_发布资料包规范.md"],
+            ["发布资料包模板", "05_发布与数据/发布资料包/TEMPLATE_发布资料包.md"],
+            ["AI 机会台账", "05_发布与数据/AI机会台账.md"]
+          ],
+          responsibilities: ["用户确认平台、发布时间、最终发布", "Codex 准备标题、简介、标签、置顶评论和来源边界"],
+          current: ["发布前资料包结构已建", "第 1 期发布版仍被字幕和成片质量卡住"],
+          next: ["先产出第 1 条可发布版本，再进入真实数据复盘"]
+        },
+        {
+          id: "review",
+          index: 10,
+          title: "日报、周报、月报与复盘",
+          status: "running",
+          focus: ["planning", "publish"],
+          desc: "把每天做了什么、每周卡在哪里、每月是否达成目标，和甘特图对齐。第一期结束后从数据、工作流、成本、内容创新四个维度复盘。",
+          tags: ["日报", "周报", "月报", "复盘"],
+          outputs: [
+            ["经验教训", "LESSONS_LEARNED.md"],
+            ["讨论队列", "DISCUSSION_QUEUE.md"],
+            ["发布复盘目录", "05_发布与数据/发布复盘/"],
+            ["协作模式与执行评估", "00_项目管理/协作模式与执行评估.md"]
+          ],
+          responsibilities: ["用户补充播放、评论、私信、主观感受", "Codex 整理日报、周报、月报和下轮优化项"],
+          current: ["复盘机制有文档，但还没有每日节奏化执行", "本 HTML 新增日报/周报/月报板块"],
+          next: ["从今天起每天把实际进度追加到本看板"]
+        }
+      ],
+      gantt: {
+        start: "2026-07-10",
+        end: "2026-10-10",
+        tasks: [
+          { name: "主看板与项目对齐", owner: "Codex + 用户", start: "2026-07-10", end: "2026-07-12", type: "workflow", note: "把工作流、甘特图、日报机制先立住" },
+          { name: "第 1 期发布版修正", owner: "用户 + Codex", start: "2026-07-10", end: "2026-07-14", type: "risk", note: "修字幕、明确平台、产出可发布版本" },
+          { name: "第一轮 30 天日更", owner: "用户主导", start: "2026-07-10", end: "2026-08-08", type: "core", note: "先坚持，不追求完美" },
+          { name: "日更全链路跑通", owner: "Codex 主导", start: "2026-07-10", end: "2026-07-24", type: "workflow", note: "候选、核验、脚本、素材、发布包、复盘" },
+          { name: "最小制作时间压缩", owner: "用户 + Codex", start: "2026-07-15", end: "2026-08-08", type: "workflow", note: "记录每条耗时，压缩到可持续成本" },
+          { name: "第一轮复盘", owner: "用户 + Codex", start: "2026-08-09", end: "2026-08-15", type: "review", note: "数据、工作流、时间成本、内容反馈" },
+          { name: "第二轮 30 天优化", owner: "用户主导", start: "2026-08-16", end: "2026-09-14", type: "core", note: "优化标题、素材、节奏和发布平台" },
+          { name: "新话题小样加入", owner: "用户 + Codex", start: "2026-09-01", end: "2026-09-21", type: "content", note: "Build in Public、武汉本地、AI 大白话等小样" },
+          { name: "第二轮复盘", owner: "用户 + Codex", start: "2026-09-15", end: "2026-09-21", type: "review", note: "判断日更是否继续，哪些内容应扩展" },
+          { name: "本地连接与内容升级", owner: "用户主导", start: "2026-09-22", end: "2026-10-09", type: "content", note: "有效 AI 连接、访谈、社群或合作机会" }
+        ]
+      },
+      reports: {
+        daily: [
+          ["2026-07-10", "D1", "重构主控 HTML，明确 30 天日更、工作流跑通、时间成本压缩和复盘机制。", "对齐中"]
+        ],
+        weekly: [
+          ["W1", "07-10 至 07-16", "产出第 1 条可发布视频；建立每天候选、口播、素材、发布资料包、日报节奏。", "参考"],
+          ["W2", "07-17 至 07-23", "连续日更，记录每条耗时；优先把制作时间压到 2 小时内。", "参考"],
+          ["W3", "07-24 至 07-30", "提升素材质量，每期至少 1 条强关联官方视频或高质量官方页面。", "参考"],
+          ["W4", "07-31 至 08-08", "完成第一轮 30 天日更，准备数据、流程、成本复盘。", "参考"]
+        ],
+        monthly: [
+          ["M1", "07-10 至 08-08", "从 0 到 1：坚持 30 天，跑通端到端流程，压缩最小成本时间。", "第一期"],
+          ["M2", "08-09 至 09-07", "优化效率和质量：标题、封面、素材、发布节奏、平台反馈。", "参考"],
+          ["M3", "09-08 至 10-09", "内容创新与连接：加入新话题、新栏目、本地 AI 连接或访谈。", "参考"]
+        ]
+      },
+      timeline: [
+        ["2026-07-04", "项目治理骨架建立", "AGENTS、PROJECT_STATE、DECISIONS、RUNBOOK 等长期协作文件创建。"],
+        ["2026-07-06", "账号名和冷启动模式确认", "账号名“武汉AI小孙”；7 天测试从多栏目改为稳定单一 AI 信息筛选模板。"],
+        ["2026-07-08", "HyperFrames 包装验证", "12 秒横屏小样、竖屏完整 v1/v2 相继跑通，确认代码包装可行但成品感还需提高。"],
+        ["2026-07-09", "端到端日更流程成型", "选题、素材、封面标题、发布资料包、复盘和自动筛选任务完成初版沉淀。"],
+        ["2026-07-10", "三批自动化检查视频审计通过", "20:00、03:00、07:00 三批横版检查视频齐全，素材统计和最终审计通过。"],
+        ["2026-07-10", "主控 HTML 升级", "工作流瀑布、3 个月甘特图、日报/周报/月报板块成为后续项目对齐入口。"]
+      ]
+    };
+
+    const STATUS_TEXT = {
+      done: "已跑通",
+      running: "进行中",
+      partial: "初版/部分",
+      blocked: "阻塞",
+      candidate: "待验证"
+    };
+
+    const app = document.getElementById("workflowApp");
+    const workflowStack = document.getElementById("workflowStack");
+    const focusSelect = document.getElementById("focusSelect");
+    let currentFilter = "all";
+    let currentFocus = "all";
+
+    function statusClass(status) {
+      return `status ${status}`;
+    }
+
+    function hrefFor(path) {
+      if (path.startsWith("00_项目管理/")) return encodeURI(path.replace("00_项目管理/", ""));
+      if (path === "PROJECT_STATE.md" || path === "DECISIONS.md" || path === "RUNBOOK.md" || path === "LESSONS_LEARNED.md" || path === "DISCUSSION_QUEUE.md") {
+        return encodeURI(`../${path}`);
+      }
+      return encodeURI(`../${path}`);
+    }
+
+    function itemVisible(item) {
+      const statusMatch = currentFilter === "all" || item.status === currentFilter;
+      const focusMatch = currentFocus === "all" || item.focus.includes(currentFocus);
+      return statusMatch && focusMatch;
+    }
+
+    function outputList(outputs) {
+      return `<ol class="output-list">${outputs.map(([label, path]) => `
+        <li><a href="${hrefFor(path)}">${label}</a><span class="path">${path}</span></li>
+      `).join("")}</ol>`;
+    }
+
+    function plainList(items) {
+      return `<ul class="plain-list">${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
+    }
+
+    function renderWorkflows() {
+      workflowStack.innerHTML = DATA.workflows.map(item => `
+        <article class="flow-card ${itemVisible(item) ? "" : "hidden"}">
+          <div class="flow-index">${String(item.index).padStart(2, "0")}</div>
+          <div class="flow-main">
+            <div class="flow-head">
+              <h3>${item.title}</h3>
+              <span class="${statusClass(item.status)}">${STATUS_TEXT[item.status]}</span>
+            </div>
+            <p class="flow-desc">${item.desc}</p>
+            <div class="chips">${item.tags.map(tag => `<span class="chip">${tag}</span>`).join("")}</div>
+            <div class="flow-grid">
+              <div class="mini-box"><h4>已产出 / 可点击查看</h4>${outputList(item.outputs)}</div>
+              <div class="mini-box"><h4>当前状态</h4>${plainList(item.current)}</div>
+              <div class="mini-box"><h4>分工与下一步</h4>${plainList([...item.responsibilities, ...item.next])}</div>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function daysBetween(a, b) {
+      const day = 24 * 60 * 60 * 1000;
+      return Math.round((new Date(`${b}T00:00:00+08:00`) - new Date(`${a}T00:00:00+08:00`)) / day);
+    }
+
+    function renderGantt() {
+      const gantt = document.getElementById("gantt");
+      const total = daysBetween(DATA.gantt.start, DATA.gantt.end) + 1;
+      const monthSpans = [
+        ["2026年7月", 1, 22],
+        ["2026年8月", 23, 53],
+        ["2026年9月", 54, 83],
+        ["2026年10月", 84, 93]
+      ];
+      const ticks = Array.from({ length: total }, (_, i) => i + 1);
+      gantt.innerHTML = `
+        <div class="gantt-label">时间轴</div>
+        <div class="gantt-months">${monthSpans.map(([label, start, end]) => `<div class="month" style="grid-column:${start}/${end + 1}">${label}</div>`).join("")}</div>
+        <div class="gantt-label">任务</div>
+        <div class="gantt-scale">${ticks.map(i => {
+          const date = new Date("2026-07-10T00:00:00+08:00");
+          date.setDate(date.getDate() + i - 1);
+          const day = date.getDate();
+          return day === 1 || i === 1 || day === 10 || day === 20 ? `<div class="tick">${date.getMonth() + 1}/${day}</div>` : `<div class="tick"></div>`;
+        }).join("")}</div>
+        ${DATA.gantt.tasks.map(task => {
+          const start = daysBetween(DATA.gantt.start, task.start) + 1;
+          const end = daysBetween(DATA.gantt.start, task.end) + 2;
+          return `
+            <div class="gantt-task-label"><strong>${task.name}</strong><span>${task.owner}<br>${task.start} 至 ${task.end}</span></div>
+            <div class="gantt-track"><div class="bar ${task.type}" style="grid-column:${start}/${end}">${task.note}</div></div>
+          `;
+        }).join("")}
+      `;
+    }
+
+    function renderReports() {
+      const grid = document.getElementById("reportGrid");
+      const makeTable = (rows, headers) => `
+        <table class="report-table">
+          <thead><tr>${headers.map(h => `<th>${h}</th>`).join("")}</tr></thead>
+          <tbody>${rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody>
+        </table>
+      `;
+      grid.innerHTML = `
+        <article class="report-card">
+          <h3>日报</h3>
+          <p>每天记录实际推进，和甘特图当日任务对齐。</p>
+          ${makeTable(DATA.reports.daily, ["日期", "天数", "进度", "状态"])}
+        </article>
+        <article class="report-card">
+          <h3>周报</h3>
+          <p>每周看是否还在日更、是否跑通流程、是否压缩时间。</p>
+          ${makeTable(DATA.reports.weekly, ["周", "时间", "目标", "状态"])}
+        </article>
+        <article class="report-card">
+          <h3>月报</h3>
+          <p>每 30 天做阶段复盘，决定下一个 30 天如何优化。</p>
+          ${makeTable(DATA.reports.monthly, ["月", "时间", "目标", "状态"])}
+        </article>
+      `;
+    }
+
+    function renderTimeline() {
+      document.getElementById("timeline").innerHTML = DATA.timeline.map(([date, title, note]) => `
+        <div class="event"><time>${date}</time><div class="event-body"><strong>${title}</strong><br>${note}</div></div>
+      `).join("");
+    }
+
+    app.querySelectorAll("[data-filter]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentFilter = btn.dataset.filter;
+        app.querySelectorAll("[data-filter]").forEach(other => {
+          other.setAttribute("aria-pressed", String(other === btn));
+        });
+        renderWorkflows();
+      });
+    });
+
+    focusSelect.addEventListener("change", () => {
+      currentFocus = focusSelect.value;
+      renderWorkflows();
+    });
+
+    renderWorkflows();
+    renderGantt();
+    renderReports();
+    renderTimeline();
+  </script>
+</body>
+</html>
