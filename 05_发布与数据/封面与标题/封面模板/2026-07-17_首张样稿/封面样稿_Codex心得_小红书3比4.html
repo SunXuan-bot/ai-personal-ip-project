@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 心得封面样稿</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 1242px;
+      height: 1660px;
+      margin: 0;
+      overflow: hidden;
+      background: #f4f3ee;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    .cover {
+      position: relative;
+      width: 1242px;
+      height: 1660px;
+      overflow: hidden;
+      background: #f4f3ee;
+      color: #151719;
+    }
+
+    .portrait {
+      position: absolute;
+      inset: 0 0 0 450px;
+      width: 792px;
+      height: 1660px;
+      object-fit: cover;
+      object-position: 49% 39%;
+      filter: saturate(0.9) contrast(1.04) brightness(1.03);
+    }
+
+    .portrait-shade {
+      position: absolute;
+      inset: 0 0 0 450px;
+      background: rgba(19, 22, 24, 0.07);
+    }
+
+    .content-panel {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 672px;
+      padding: 84px 58px 70px 68px;
+      background: #f4f3ee;
+      border-right: 10px solid #151719;
+    }
+
+    .series {
+      display: inline-flex;
+      align-items: center;
+      height: 62px;
+      padding: 0 23px;
+      background: #e85f49;
+      color: #fff;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .counter {
+      margin-left: 11px;
+      padding: 0 18px;
+      background: #151719;
+      color: #f3c94d;
+    }
+
+    h1 {
+      margin: 96px 0 0;
+      font-size: 116px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .accent-line {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+
+    .accent-line::after {
+      position: absolute;
+      z-index: -1;
+      right: -8px;
+      bottom: 8px;
+      left: -8px;
+      height: 28px;
+      background: #f3c94d;
+      content: "";
+    }
+
+    .judgment {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 8px solid #151719;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .identity {
+      position: absolute;
+      bottom: 69px;
+      left: 68px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 27px;
+      font-weight: 800;
+    }
+
+    .identity-mark {
+      width: 18px;
+      height: 18px;
+      background: #1d7a70;
+    }
+
+    .tool-tag {
+      position: absolute;
+      top: 76px;
+      right: 58px;
+      padding: 17px 22px;
+      border: 4px solid rgba(255, 255, 255, 0.78);
+      background: rgba(21, 23, 25, 0.92);
+      color: #f3c94d;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .terminal {
+      position: absolute;
+      right: 48px;
+      bottom: 74px;
+      width: 500px;
+      height: 310px;
+      padding: 28px 30px;
+      border: 4px solid rgba(255, 255, 255, 0.82);
+      background: rgba(17, 20, 22, 0.94);
+      box-shadow: 14px 14px 0 #1d7a70;
+      color: #f7f7f3;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+    }
+
+    .terminal-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 19px;
+      border-bottom: 2px solid #4a5054;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #e85f49;
+    }
+
+    .dot:nth-child(2) { background: #f3c94d; }
+    .dot:nth-child(3) { background: #1d7a70; }
+
+    .terminal-title {
+      margin-left: 8px;
+      color: #c6cbce;
+      font-size: 19px;
+    }
+
+    .file-list {
+      margin-top: 23px;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.85;
+    }
+
+    .file-list div::before {
+      margin-right: 13px;
+      color: #f3c94d;
+      content: ">";
+    }
+
+    .verified {
+      margin-top: 14px;
+      color: #75d3c8;
+      font-size: 19px;
+    }
+  </style>
+</head>
+<body>
+  <main class="cover" aria-label="Codex Agent 心得封面样稿">
+    <img class="portrait" src="真人帧_30s.jpg" alt="小孙口播画面">
+    <div class="portrait-shade"></div>
+
+    <section class="content-panel">
+      <div class="series">AGENT 心得 <span class="counter">01</span></div>
+      <h1>
+        <span>Codex</span>
+        <span>好用，</span>
+        <span class="accent-line">但别一上来</span>
+        <span>就让它干活</span>
+      </h1>
+      <div class="judgment">我真实用了一段时间后，<br>先改掉了这一步。</div>
+      <div class="identity"><span class="identity-mark"></span>武汉AI小孙 · 小孙实测</div>
+    </section>
+
+    <div class="tool-tag">CODEX / AGENT</div>
+
+    <aside class="terminal" aria-label="项目上下文文件示意">
+      <div class="terminal-head">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="terminal-title">project_context</span>
+      </div>
+      <div class="file-list">
+        <div>AGENTS.md</div>
+        <div>PROJECT_STATE.md</div>
+        <div>RUNBOOK.md</div>
+      </div>
+      <div class="verified">context loaded / ready</div>
+    </aside>
+  </main>
+</body>
+</html>

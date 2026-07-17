@@ -44,6 +44,11 @@ node_modules/
 *.rar
 *.7z
 
+# Small reviewed cover deliverables may sync across devices
+!05_发布与数据/封面与标题/封面模板/**/*.png
+!05_发布与数据/封面与标题/封面模板/**/*.jpg
+!05_发布与数据/封面与标题/封面模板/**/*.jpeg
+
 # Temporary files
 *.tmp
 *.bak
