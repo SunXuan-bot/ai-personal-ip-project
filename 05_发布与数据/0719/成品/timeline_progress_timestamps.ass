@@ -1,0 +1,155 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: TimelineTitle,Microsoft YaHei,21,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: TimelineTitleDark,Microsoft YaHei,21,&H00000000,&H00000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: TimelineTime,Microsoft YaHei,15,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: TimelineTimeDark,Microsoft YaHei,15,&H00000000,&H00000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Shape,Arial,20,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(0,0)\p1\c&H000000&}m 0 0 l 1920 0 l 1920 68 l 0 68
+Dialogue: 1,0:00:00.00,0:00:17.87,Shape,,0,0,0,,{\an7\move(-1920,0,-1646,0)\p1\c&HFFFFFF&}m 0 0 l 1920 0 l 1920 68 l 0 68
+Dialogue: 1,0:00:17.87,0:00:46.60,Shape,,0,0,0,,{\an7\move(-1646,0,-1371,0)\p1\c&HFFFFFF&}m 0 0 l 1920 0 l 1920 68 l 0 68
+Dialogue: 1,0:00:46.60,0:01:09.97,Shape,,0,0,0,,{\an7\move(-1371,0,-1097,0)\p1\c&HFFFFFF&}m 0 0 l 1920 0 l 1920 68 l 0 68
+Dialogue: 1,0:01:09.97,0:01:57.87,Shape,,0,0,0,,{\an7\move(-1097,0,-823,0)\p1\c&HFFFFFF&}m 0 0 l 1920 0 l 1920 68 l 0 68
+Dialogue: 1,0:01:57.87,0:02:46.00,Shape,,0,0,0,,{\an7\move(-823,0,-549,0)\p1\c&HFFFFFF&}m 0 0 l 1920 0 l 1920 68 l 0 68
+Dialogue: 1,0:02:46.00,0:03:43.07,Shape,,0,0,0,,{\an7\move(-549,0,-274,0)\p1\c&HFFFFFF&}m 0 0 l 1920 0 l 1920 68 l 0 68
+Dialogue: 1,0:03:43.07,0:04:29.05,Shape,,0,0,0,,{\an7\move(-274,0,-3,0)\p1\c&HFFFFFF&}m 0 0 l 1920 0 l 1920 68 l 0 68
+Dialogue: 2,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(0,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 2,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(274,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 2,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(549,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 2,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(823,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 2,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1097,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 2,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1371,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 2,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1646,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 2,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1917,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 4,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(0,0)\p1\c&H000000&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 4,0:00:17.87,0:04:29.05,Shape,,0,0,0,,{\an7\pos(274,0)\p1\c&H000000&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 4,0:00:46.60,0:04:29.05,Shape,,0,0,0,,{\an7\pos(549,0)\p1\c&H000000&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 4,0:01:09.97,0:04:29.05,Shape,,0,0,0,,{\an7\pos(823,0)\p1\c&H000000&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 4,0:01:57.87,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1097,0)\p1\c&H000000&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 4,0:02:46.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1371,0)\p1\c&H000000&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 4,0:03:43.07,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1646,0)\p1\c&H000000&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 4,0:04:29.05,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1917,0)\p1\c&H000000&}m 0 0 l 3 0 l 3 68 l 0 68
+Dialogue: 5,0:00:00.00,0:00:17.87,Shape,,0,0,0,,{\an7\move(0,0,274,0)\p1\c&H66D1FF&}m 0 0 l 6 0 l 6 68 l 0 68
+Dialogue: 5,0:00:17.87,0:00:46.60,Shape,,0,0,0,,{\an7\move(274,0,549,0)\p1\c&H66D1FF&}m 0 0 l 6 0 l 6 68 l 0 68
+Dialogue: 5,0:00:46.60,0:01:09.97,Shape,,0,0,0,,{\an7\move(549,0,823,0)\p1\c&H66D1FF&}m 0 0 l 6 0 l 6 68 l 0 68
+Dialogue: 5,0:01:09.97,0:01:57.87,Shape,,0,0,0,,{\an7\move(823,0,1097,0)\p1\c&H66D1FF&}m 0 0 l 6 0 l 6 68 l 0 68
+Dialogue: 5,0:01:57.87,0:02:46.00,Shape,,0,0,0,,{\an7\move(1097,0,1371,0)\p1\c&H66D1FF&}m 0 0 l 6 0 l 6 68 l 0 68
+Dialogue: 5,0:02:46.00,0:03:43.07,Shape,,0,0,0,,{\an7\move(1371,0,1646,0)\p1\c&H66D1FF&}m 0 0 l 6 0 l 6 68 l 0 68
+Dialogue: 5,0:03:43.07,0:04:29.05,Shape,,0,0,0,,{\an7\move(1646,0,1914,0)\p1\c&H66D1FF&}m 0 0 l 6 0 l 6 68 l 0 68
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTime,,0,0,0,,{\an7\pos(117.0,8)}00:00
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTitle,,0,0,0,,{\an7\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTime,,0,0,0,,{\an7\pos(391.5,8)}00:18
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTitle,,0,0,0,,{\an7\pos(345.5,33)}Codex 的安装
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTime,,0,0,0,,{\an7\pos(666.0,8)}00:47
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTitle,,0,0,0,,{\an7\pos(602.0,33)}效果图要自己生图
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTime,,0,0,0,,{\an7\pos(940.0,8)}01:10
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTitle,,0,0,0,,{\an7\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTime,,0,0,0,,{\an7\pos(1214.0,8)}01:58
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTitle,,0,0,0,,{\an7\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTime,,0,0,0,,{\an7\pos(1488.5,8)}02:46
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTitle,,0,0,0,,{\an7\pos(1434.5,33)}追问整体UI统一
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTime,,0,0,0,,{\an7\pos(1761.5,8)}03:43
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineTitle,,0,0,0,,{\an7\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:00:04.14,0:00:04.92,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,63.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:04.92,0:00:06.29,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,75.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:06.29,0:00:07.66,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,96.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:07.66,0:00:09.03,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,117.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:09.03,0:00:10.40,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,138.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:10.40,0:00:11.77,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,159.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:11.77,0:00:13.14,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,180.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:13.14,0:00:14.51,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,201.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:14.51,0:04:29.05,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,222.5,68)\pos(51.5,33)}99元皮肤其实开源
+Dialogue: 6,0:00:26.80,0:00:28.16,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,359.5,68)\pos(345.5,33)}Codex 的安装
+Dialogue: 6,0:00:28.16,0:00:29.52,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,372.5,68)\pos(345.5,33)}Codex 的安装
+Dialogue: 6,0:00:29.52,0:00:30.77,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,385.5,68)\pos(345.5,33)}Codex 的安装
+Dialogue: 6,0:00:30.77,0:00:31.92,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,397.5,68)\pos(345.5,33)}Codex 的安装
+Dialogue: 6,0:00:31.92,0:00:34.74,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,408.5,68)\pos(345.5,33)}Codex 的安装
+Dialogue: 6,0:00:34.74,0:00:36.93,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,435.5,68)\pos(345.5,33)}Codex 的安装
+Dialogue: 6,0:00:36.93,0:00:39.13,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,456.5,68)\pos(345.5,33)}Codex 的安装
+Dialogue: 6,0:00:39.13,0:04:29.05,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,477.5,68)\pos(345.5,33)}Codex 的安装
+Dialogue: 6,0:00:52.91,0:00:54.70,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,623.0,68)\pos(602.0,33)}效果图要自己生图
+Dialogue: 6,0:00:54.70,0:00:56.49,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,644.0,68)\pos(602.0,33)}效果图要自己生图
+Dialogue: 6,0:00:56.49,0:00:58.28,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,665.0,68)\pos(602.0,33)}效果图要自己生图
+Dialogue: 6,0:00:58.28,0:01:00.07,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,686.0,68)\pos(602.0,33)}效果图要自己生图
+Dialogue: 6,0:01:00.07,0:01:01.86,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,707.0,68)\pos(602.0,33)}效果图要自己生图
+Dialogue: 6,0:01:01.86,0:01:03.66,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,728.0,68)\pos(602.0,33)}效果图要自己生图
+Dialogue: 6,0:01:03.66,0:01:05.45,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,749.0,68)\pos(602.0,33)}效果图要自己生图
+Dialogue: 6,0:01:05.45,0:04:29.05,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,770.0,68)\pos(602.0,33)}效果图要自己生图
+Dialogue: 6,0:01:22.90,0:01:26.57,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,897.0,68)\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 6,0:01:26.57,0:01:30.24,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,918.0,68)\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 6,0:01:30.24,0:01:33.92,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,939.0,68)\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 6,0:01:33.92,0:01:37.59,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,960.0,68)\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 6,0:01:37.59,0:01:41.26,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,981.0,68)\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 6,0:01:41.26,0:01:44.93,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1002.0,68)\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 6,0:01:44.93,0:01:48.60,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1023.0,68)\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 6,0:01:48.60,0:04:29.05,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1044.0,68)\pos(876.0,33)}重启查看默认皮肤
+Dialogue: 6,0:02:10.87,0:02:14.55,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1171.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:02:14.55,0:02:18.24,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1192.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:02:18.24,0:02:21.93,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1213.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:02:21.93,0:02:25.62,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1234.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:02:25.62,0:02:28.26,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1255.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:02:28.26,0:02:29.31,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1270.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:02:29.31,0:02:33.00,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1276.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:02:33.00,0:02:36.69,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1297.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:02:36.69,0:04:29.05,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1318.0,68)\pos(1150.0,33)}上传照片让AI换肤
+Dialogue: 6,0:03:03.53,0:03:07.89,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1455.5,68)\pos(1434.5,33)}追问整体UI统一
+Dialogue: 6,0:03:07.89,0:03:12.25,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1476.5,68)\pos(1434.5,33)}追问整体UI统一
+Dialogue: 6,0:03:12.25,0:03:16.61,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1497.5,68)\pos(1434.5,33)}追问整体UI统一
+Dialogue: 6,0:03:16.61,0:03:19.93,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1518.5,68)\pos(1434.5,33)}追问整体UI统一
+Dialogue: 6,0:03:19.93,0:03:21.17,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1534.5,68)\pos(1434.5,33)}追问整体UI统一
+Dialogue: 6,0:03:21.17,0:03:25.53,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1540.5,68)\pos(1434.5,33)}追问整体UI统一
+Dialogue: 6,0:03:25.53,0:03:29.89,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1561.5,68)\pos(1434.5,33)}追问整体UI统一
+Dialogue: 6,0:03:29.89,0:04:29.05,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1582.5,68)\pos(1434.5,33)}追问整体UI统一
+Dialogue: 6,0:03:55.37,0:03:58.93,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1718.5,68)\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:03:58.93,0:04:02.49,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1739.5,68)\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:04:02.49,0:04:06.06,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1760.5,68)\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:04:06.06,0:04:09.62,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1781.5,68)\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:04:09.62,0:04:13.18,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1802.5,68)\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:04:13.18,0:04:16.75,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1823.5,68)\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:04:16.75,0:04:20.31,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1844.5,68)\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:04:20.31,0:04:29.05,TimelineTitleDark,,0,0,0,,{\an7\clip(0,0,1865.5,68)\pos(1697.5,33)}复制提示词继续改
+Dialogue: 6,0:00:08.22,0:00:08.80,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,126.0,68)\pos(117.0,8)}00:00
+Dialogue: 6,0:00:08.80,0:00:09.06,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,135.0,68)\pos(117.0,8)}00:00
+Dialogue: 6,0:00:09.06,0:00:09.65,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,139.0,68)\pos(117.0,8)}00:00
+Dialogue: 6,0:00:09.65,0:00:10.24,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,148.0,68)\pos(117.0,8)}00:00
+Dialogue: 6,0:00:10.24,0:04:29.05,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,157.0,68)\pos(117.0,8)}00:00
+Dialogue: 6,0:00:31.08,0:00:32.02,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,400.5,68)\pos(391.5,8)}00:18
+Dialogue: 6,0:00:32.02,0:00:32.44,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,409.5,68)\pos(391.5,8)}00:18
+Dialogue: 6,0:00:32.44,0:00:33.38,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,413.5,68)\pos(391.5,8)}00:18
+Dialogue: 6,0:00:33.38,0:00:34.32,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,422.5,68)\pos(391.5,8)}00:18
+Dialogue: 6,0:00:34.32,0:04:29.05,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,431.5,68)\pos(391.5,8)}00:18
+Dialogue: 6,0:00:57.34,0:00:58.11,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,675.0,68)\pos(666.0,8)}00:47
+Dialogue: 6,0:00:58.11,0:00:58.45,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,684.0,68)\pos(666.0,8)}00:47
+Dialogue: 6,0:00:58.45,0:00:59.22,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,688.0,68)\pos(666.0,8)}00:47
+Dialogue: 6,0:00:59.22,0:00:59.99,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,697.0,68)\pos(666.0,8)}00:47
+Dialogue: 6,0:00:59.99,0:04:29.05,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,706.0,68)\pos(666.0,8)}00:47
+Dialogue: 6,0:01:31.99,0:01:33.57,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,949.0,68)\pos(940.0,8)}01:10
+Dialogue: 6,0:01:33.57,0:01:34.27,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,958.0,68)\pos(940.0,8)}01:10
+Dialogue: 6,0:01:34.27,0:01:35.84,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,962.0,68)\pos(940.0,8)}01:10
+Dialogue: 6,0:01:35.84,0:01:37.41,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,971.0,68)\pos(940.0,8)}01:10
+Dialogue: 6,0:01:37.41,0:04:29.05,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,980.0,68)\pos(940.0,8)}01:10
+Dialogue: 6,0:02:20.00,0:02:21.58,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1223.0,68)\pos(1214.0,8)}01:58
+Dialogue: 6,0:02:21.58,0:02:22.28,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1232.0,68)\pos(1214.0,8)}01:58
+Dialogue: 6,0:02:22.28,0:02:23.87,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1236.0,68)\pos(1214.0,8)}01:58
+Dialogue: 6,0:02:23.87,0:02:25.45,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1245.0,68)\pos(1214.0,8)}01:58
+Dialogue: 6,0:02:25.45,0:04:29.05,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1254.0,68)\pos(1214.0,8)}01:58
+Dialogue: 6,0:03:12.25,0:03:14.12,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1497.5,68)\pos(1488.5,8)}02:46
+Dialogue: 6,0:03:14.12,0:03:14.95,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1506.5,68)\pos(1488.5,8)}02:46
+Dialogue: 6,0:03:14.95,0:03:16.82,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1510.5,68)\pos(1488.5,8)}02:46
+Dialogue: 6,0:03:16.82,0:03:18.68,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1519.5,68)\pos(1488.5,8)}02:46
+Dialogue: 6,0:03:18.68,0:04:29.05,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1528.5,68)\pos(1488.5,8)}02:46
+Dialogue: 6,0:04:04.19,0:04:05.72,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1770.5,68)\pos(1761.5,8)}03:43
+Dialogue: 6,0:04:05.72,0:04:06.40,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1779.5,68)\pos(1761.5,8)}03:43
+Dialogue: 6,0:04:06.40,0:04:07.92,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1783.5,68)\pos(1761.5,8)}03:43
+Dialogue: 6,0:04:07.92,0:04:09.45,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1792.5,68)\pos(1761.5,8)}03:43
+Dialogue: 6,0:04:09.45,0:04:29.05,TimelineTimeDark,,0,0,0,,{\an7\clip(0,0,1801.5,68)\pos(1761.5,8)}03:43

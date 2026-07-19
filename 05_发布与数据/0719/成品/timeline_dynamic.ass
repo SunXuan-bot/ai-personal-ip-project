@@ -1,0 +1,37 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: TimelineText, Microsoft YaHei, 26, &H00FFFFFF, &H00FFFFFF, &H00000000, &H00000000, 0, 0, 0, 0, 100, 100, 0, 0, 1, 0, 0, 7, 0, 0, 0, 1
+Style: Shape, Arial, 20, &H00FFFFFF, &H00FFFFFF, &H00000000, &H00000000, 0, 0, 0, 0, 100, 100, 0, 0, 1, 0, 0, 7, 0, 0, 0, 1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(0,0)\p1\c&H000000&}m 0 0 l 1920 0 l 1920 82 l 0 82
+Dialogue: 1,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(0,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 82 l 0 82
+Dialogue: 1,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(274,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 82 l 0 82
+Dialogue: 1,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(549,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 82 l 0 82
+Dialogue: 1,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(823,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 82 l 0 82
+Dialogue: 1,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1097,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 82 l 0 82
+Dialogue: 1,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1371,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 82 l 0 82
+Dialogue: 1,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1646,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 82 l 0 82
+Dialogue: 1,0:00:00.00,0:04:29.05,Shape,,0,0,0,,{\an7\pos(1917,0)\p1\c&HFFFFFF&}m 0 0 l 3 0 l 3 82 l 0 82
+Dialogue: 2,0:00:00.00,0:00:17.87,Shape,,0,0,0,,{\an7\move(0,0,274,0)\p1\c&H66D1FF&}m 0 0 l 8 0 l 8 82 l 0 82
+Dialogue: 2,0:00:17.87,0:00:46.60,Shape,,0,0,0,,{\an7\move(274,0,549,0)\p1\c&H66D1FF&}m 0 0 l 8 0 l 8 82 l 0 82
+Dialogue: 2,0:00:46.60,0:01:09.97,Shape,,0,0,0,,{\an7\move(549,0,823,0)\p1\c&H66D1FF&}m 0 0 l 8 0 l 8 82 l 0 82
+Dialogue: 2,0:01:09.97,0:01:57.87,Shape,,0,0,0,,{\an7\move(823,0,1097,0)\p1\c&H66D1FF&}m 0 0 l 8 0 l 8 82 l 0 82
+Dialogue: 2,0:01:57.87,0:02:46.00,Shape,,0,0,0,,{\an7\move(1097,0,1371,0)\p1\c&H66D1FF&}m 0 0 l 8 0 l 8 82 l 0 82
+Dialogue: 2,0:02:46.00,0:03:43.07,Shape,,0,0,0,,{\an7\move(1371,0,1646,0)\p1\c&H66D1FF&}m 0 0 l 8 0 l 8 82 l 0 82
+Dialogue: 2,0:03:43.07,0:04:29.05,Shape,,0,0,0,,{\an7\move(1646,0,1912,0)\p1\c&H66D1FF&}m 0 0 l 8 0 l 8 82 l 0 82
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineText,,0,0,0,,{\an7\pos(24,24)}99元皮肤其实开源
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineText,,0,0,0,,{\an7\pos(326,24)}Codex 的安装
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineText,,0,0,0,,{\an7\pos(580,24)}效果图要自己生图
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineText,,0,0,0,,{\an7\pos(858,24)}重启查看默认皮肤
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineText,,0,0,0,,{\an7\pos(1124,24)}上传照片让AI换肤
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineText,,0,0,0,,{\an7\pos(1408,24)}追问整体UI统一
+Dialogue: 3,0:00:00.00,0:04:29.05,TimelineText,,0,0,0,,{\an7\pos(1684,24)}复制提示词继续改

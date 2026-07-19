@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频时间戳"
+  short_description: "为视频添加章节时间戳与动态进度轨迹"
+  default_prompt: "Use $video-timestamp to add a reusable chapter timestamp progress bar to this video."
