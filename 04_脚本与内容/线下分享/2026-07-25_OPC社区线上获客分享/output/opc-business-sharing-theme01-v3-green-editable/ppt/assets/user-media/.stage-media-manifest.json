@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "sourceId": "da403cd4928c",
+      "relative": "assets/user-media/media.jpg",
+      "kind": "image",
+      "mime": "image/jpeg"
+    },
+    {
+      "sourceId": "3c243d474a7f",
+      "relative": "assets/user-media/media-3c243d474a7f.jpg",
+      "kind": "image",
+      "mime": "image/jpeg"
+    },
+    {
+      "sourceId": "ea861aa53dfc",
+      "relative": "assets/user-media/media-ea861aa53dfc.jpg",
+      "kind": "image",
+      "mime": "image/jpeg"
+    },
+    {
+      "sourceId": "7f2f44d8d2a2",
+      "relative": "assets/user-media/media-7f2f44d8d2a2.jpg",
+      "kind": "image",
+      "mime": "image/jpeg"
+    }
+  ]
+}

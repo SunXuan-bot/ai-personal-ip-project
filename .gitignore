@@ -49,6 +49,12 @@ node_modules/
 !05_发布与数据/封面与标题/封面模板/**/*.jpg
 !05_发布与数据/封面与标题/封面模板/**/*.jpeg
 
+# OPC sharing deck: reviewed source images and runtime media must sync across devices
+!04_脚本与内容/线下分享/2026-07-25_OPC社区线上获客分享/output/opc-business-sharing-theme01-v3-green-editable/**/*.png
+!04_脚本与内容/线下分享/2026-07-25_OPC社区线上获客分享/output/opc-business-sharing-theme01-v3-green-editable/**/*.jpg
+!04_脚本与内容/线下分享/2026-07-25_OPC社区线上获客分享/output/opc-business-sharing-theme01-v3-green-editable/**/*.jpeg
+!04_脚本与内容/线下分享/2026-07-25_OPC社区线上获客分享/output/opc-business-sharing-theme01-v3-green-editable/**/*.webp
+
 # Temporary files
 *.tmp
 *.bak

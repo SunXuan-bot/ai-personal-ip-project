@@ -1,0 +1,342 @@
+{
+  "title": "如何通过线上运营，实现产品与服务的销售目标",
+  "goal": "面向 OPC 社区，以武汉驾到短视频业务为案例，拆解从运营目标、公域获客、私域承接到成交转化的完整链路",
+  "audience": "OPC 社区创业者、独立服务者和小团队经营者",
+  "owner": "孙轩",
+  "randomSeed": "theme01-20260722-opc-green-editable",
+  "pageCount": 8,
+  "themePack": "theme01",
+  "slides": [
+    {
+      "layout": "theme01_page002",
+      "props": {
+        "enKicker": "",
+        "titleTop": "如何通过线上运营",
+        "titleBottom": "实现产品与服务的销售目标",
+        "subtitle": "主讲人：孙轩",
+        "pills": [],
+        "meta": "",
+        "footnote": "",
+        "pillCount": 0,
+        "showOrb": false,
+        "showSubtitle": true,
+        "showBokeh": false,
+        "accentColor": "#46b083",
+        "showCaption": false
+      }
+    },
+    {
+      "layout": "theme01_page081",
+      "props": {
+        "kicker": "个人介绍",
+        "title": "从内容表达，到平台运营，再到业务实践",
+        "en": "",
+        "panels": [
+          {
+            "tag": "电台",
+            "tagTone": "",
+            "heading": "媒体表达",
+            "sub": "从采访、主持与内容表达开始"
+          },
+          {
+            "tag": "斗鱼",
+            "tagTone": "",
+            "heading": "平台运营",
+            "sub": "进入互联网平台内容与运营场景"
+          },
+          {
+            "tag": "武汉驾到",
+            "tagTone": "",
+            "heading": "业务实践",
+            "sub": "负责短视频与线上获客实践"
+          }
+        ],
+        "caption": "",
+        "images": [
+          "assets/user-media/media.jpg",
+          "assets/user-media/media-3c243d474a7f.jpg",
+          "assets/user-media/media-ea861aa53dfc.jpg"
+        ],
+        "imageSlotCount": 3,
+        "imageFit": "cover",
+        "highlight": false,
+        "showIndex": false,
+        "accentColor": "#46b083",
+        "showCaption": false
+      }
+    },
+    {
+      "layout": "theme01_page025",
+      "props": {
+        "kicker": "案例背景",
+        "title": "好产品，为什么增长仍然乏力？",
+        "en": "",
+        "cn": "武汉驾到短视频业务",
+        "companies": [
+          {
+            "name": "已有基础",
+            "role": "产品与口碑"
+          },
+          {
+            "name": "原有方式",
+            "role": "熟人传播"
+          },
+          {
+            "name": "增长缺口",
+            "role": "线上获客"
+          }
+        ],
+        "attributes": [
+          {
+            "label": "核心特征",
+            "values": [
+              "优质产品",
+              "口碑转介绍",
+              "陌生流量触达"
+            ]
+          },
+          {
+            "label": "用户体验",
+            "values": [
+              "线下体验良好",
+              "依赖关系信任",
+              "线上信任不足"
+            ]
+          },
+          {
+            "label": "增长方式",
+            "values": [
+              "自然口碑沉淀",
+              "人工邀约拉新",
+              "缺少可放大链路"
+            ]
+          },
+          {
+            "label": "关键判断",
+            "values": [
+              "不是产品问题",
+              "获客方式单一",
+              "需要建立线上系统"
+            ]
+          }
+        ],
+        "caption": "",
+        "images": [],
+        "itemCount": 3,
+        "rowCount": 4,
+        "highlight": false,
+        "accentColor": "#46b083",
+        "imageSlotCount": 0,
+        "showCaption": false
+      }
+    },
+    {
+      "layout": "theme01_page047",
+      "props": {
+        "kicker": "明确线上运营目标",
+        "quote": "自媒体运营，要围绕获客、咨询和成交展开。",
+        "contrastWord": "",
+        "highlightWord": "",
+        "attribution": "",
+        "caption": "",
+        "notes": [],
+        "accentColor": "#46b083",
+        "noteCount": 0,
+        "showHighlighter": false,
+        "showQuoteMark": false,
+        "showAttribution": false,
+        "align": "center",
+        "showCaption": false
+      }
+    },
+    {
+      "layout": "theme01_page058",
+      "props": {
+        "kicker": "搭建公域到私域的获客链路",
+        "title": "流量如何一步步走向成交",
+        "en": "",
+        "cn": "从公域触达到业务结果",
+        "events": [
+          {
+            "date": "公域流量",
+            "title": "看见内容",
+            "desc": "目标用户第一次接触内容"
+          },
+          {
+            "date": "评论（客户线索）",
+            "title": "表达需求",
+            "desc": "用户留下可识别的需求线索"
+          },
+          {
+            "date": "主动私信",
+            "title": "建立沟通",
+            "desc": "运营主动承接并继续沟通"
+          },
+          {
+            "date": "添加微信成功",
+            "title": "进入私域",
+            "desc": "进入可以持续咨询的场景"
+          },
+          {
+            "date": "引导成交",
+            "title": "需求匹配",
+            "desc": "完成产品、需求与服务匹配"
+          }
+        ],
+        "note": "",
+        "caption": "",
+        "itemCount": 5,
+        "highlight": false,
+        "showSpine": false,
+        "alternate": false,
+        "accentColor": "#46b083",
+        "showNote": false,
+        "showCaption": false
+      }
+    },
+    {
+      "layout": "theme01_page028",
+      "props": {
+        "kicker": "提高转化效率的三个方法",
+        "title": "同一条漏斗，逐层优化",
+        "en": "",
+        "cn": "提高动力、增加触点、降低阻力",
+        "events": [
+          {
+            "date": "公域流量",
+            "round": "提升动力",
+            "amount": "",
+            "unit": "",
+            "note": "让目标用户愿意停留"
+          },
+          {
+            "date": "评论（客户线索）",
+            "round": "增加触点",
+            "amount": "",
+            "unit": "",
+            "note": "及时承接用户互动"
+          },
+          {
+            "date": "主动私信",
+            "round": "增加触点",
+            "amount": "",
+            "unit": "",
+            "note": "主动建立进一步沟通"
+          },
+          {
+            "date": "添加微信成功",
+            "round": "降低阻力",
+            "amount": "",
+            "unit": "",
+            "note": "减少信息与决策不确定"
+          },
+          {
+            "date": "引导成交",
+            "round": "持续优化",
+            "amount": "",
+            "unit": "",
+            "note": "完成需求与产品匹配"
+          }
+        ],
+        "caption": "",
+        "itemCount": 5,
+        "highlight": false,
+        "accentColor": "#46b083",
+        "layout": "horizontal",
+        "showConnector": false,
+        "showCaption": false
+      }
+    },
+    {
+      "layout": "theme01_page040",
+      "props": {
+        "kicker": "整体回顾",
+        "title": "从内容运营走向业务结果",
+        "en": "",
+        "cn": "一层一层递进，一环一环优化",
+        "phases": [
+          {
+            "period": "起点",
+            "step": "第一步",
+            "heading": "明确运营目标",
+            "points": [
+              "不只追求播放与粉丝",
+              "围绕获客、咨询、成交"
+            ],
+            "verdict": ""
+          },
+          {
+            "period": "链路",
+            "step": "第二步",
+            "heading": "搭建获客链路",
+            "points": [
+              "从公域获取目标流量",
+              "把真实需求承接到私域"
+            ],
+            "verdict": ""
+          },
+          {
+            "period": "优化",
+            "step": "第三步",
+            "heading": "提升转化效率",
+            "points": [
+              "提高动力、增加触点",
+              "降低用户决策阻力"
+            ],
+            "verdict": ""
+          },
+          {
+            "period": "结果",
+            "step": "第四步",
+            "heading": "拿到业务结果",
+            "points": [
+              "不断优化每一环转化率",
+              "让内容进入真实经营结果"
+            ],
+            "verdict": ""
+          }
+        ],
+        "caption": "",
+        "itemCount": 4,
+        "highlight": false,
+        "accentColor": "#46b083",
+        "showRail": true,
+        "showVerdict": false,
+        "showCaption": false
+      }
+    },
+    {
+      "layout": "theme01_page057",
+      "props": {
+        "kicker": "",
+        "title": "现场交流与答疑",
+        "en": "",
+        "lead": "",
+        "highlightWord": "",
+        "namePlate": {
+          "name": "",
+          "role": ""
+        },
+        "bigStat": {
+          "value": "",
+          "unit": "",
+          "label": ""
+        },
+        "tags": [],
+        "caption": "",
+        "images": [
+          "assets/user-media/media-7f2f44d8d2a2.jpg"
+        ],
+        "imageSlotCount": 1,
+        "imageFit": "contain",
+        "imageSide": "right",
+        "tagCount": 0,
+        "highlight": false,
+        "showStat": false,
+        "showHighlighter": false,
+        "accentColor": "#46b083",
+        "showCaption": false
+      }
+    }
+  ]
+}
