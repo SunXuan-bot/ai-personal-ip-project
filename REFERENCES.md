@@ -27,6 +27,7 @@
 - Reuters Institute Digital News Report 2026：https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary
 - HubSpot State of Marketing 2026：https://www.hubspot.com/state-of-marketing
 - HubSpot State of Video 2026：https://blog.hubspot.com/marketing/state-of-video-marketing-new-data
+- Dashi PPT Skill：https://github.com/chuspeeism/dashi-ppt-skill
 
 ## 来源规则
 

@@ -1,0 +1,396 @@
+{
+  "title": "不做网红，做生意",
+  "goal": "面向 OPC 社区，以武汉驾到为真实案例，说明如何通过短视频和线上运营实现获客、承接与成交",
+  "audience": "OPC 社区创业者、独立服务者和小团队经营者",
+  "owner": "孙轩",
+  "randomSeed": "theme07-20260723-opc-green-refined",
+  "pageCount": 9,
+  "themePack": "theme07",
+  "slides": [
+    {
+      "layout": "theme07_page002",
+      "props": {
+        "phaseLeft": "主办：壹企云栖人工智能OPC社区",
+        "phaseRight": "",
+        "kicker": "通过线上运营实现销售目标",
+        "titleL1": "不做网红",
+        "titleL2": "做生意",
+        "subPre": "主讲人：孙轩",
+        "years": "",
+        "subPost": "",
+        "summary": "内容不是终点，成交链路才是系统",
+        "logo": "指导：珞南街道办事处",
+        "photoLabel": "孙轩｜武汉驾到",
+        "timeline": [
+          "内容",
+          "获客",
+          "成交"
+        ],
+        "images": [
+          "assets/user-media/image-6.jpg"
+        ],
+        "imageCount": 1,
+        "showTimeline": true,
+        "showLenses": false,
+        "accentColor": "#86D62B"
+      }
+    },
+    {
+      "layout": "theme07_page071",
+      "props": {
+        "eyebrow": "个人介绍",
+        "segment": "人物经历",
+        "title": "孙轩",
+        "titleTail": "从媒体到业务",
+        "lead": "从湖北广电的内容表达，到斗鱼直播的平台运营，再到武汉驾到的业务实践。",
+        "statLine": "内容表达｜平台运营｜线上获客",
+        "closing": "把内容能力转化为业务增长",
+        "badge": "个人介绍",
+        "listTitle": "三段经历",
+        "cards": [
+          {
+            "label": "湖北广电",
+            "note": "内容表达与主持采访"
+          },
+          {
+            "label": "斗鱼直播",
+            "note": "平台内容与用户运营"
+          },
+          {
+            "label": "武汉驾到",
+            "note": "短视频与线上获客"
+          }
+        ],
+        "contactTitle": "主讲人",
+        "contacts": [
+          "孙轩",
+          "武汉驾到"
+        ],
+        "images": [
+          "assets/user-media/20260114091657-190-228.jpg"
+        ],
+        "imageCount": 1,
+        "imageRatio": "auto",
+        "cardCount": 3,
+        "focusEnabled": false,
+        "focusIndex": 0,
+        "showContact": false,
+        "showDecorations": false,
+        "accentColor": "#86D62B"
+      }
+    },
+    {
+      "layout": "theme07_page030",
+      "props": {
+        "eyebrow": "案例背景",
+        "segment": "武汉驾到",
+        "title": "武汉驾到",
+        "titleTail": "是什么生意",
+        "lead": "面向自驾旅行用户，把线路、活动、领队与服务组织成可购买的旅行产品。",
+        "closing": "产品力已经具备，增长问题出在线上获客。",
+        "badge": "真实业务",
+        "progress": {
+          "label": "从产品力走向获客力",
+          "value": 3,
+          "display": "三项关键任务"
+        },
+        "metrics": [
+          {
+            "label": "产品",
+            "value": "自驾线路",
+            "unit": "可购买"
+          },
+          {
+            "label": "用户",
+            "value": "家庭客群",
+            "unit": "重体验"
+          },
+          {
+            "label": "增长",
+            "value": "短视频",
+            "unit": "获新客"
+          }
+        ],
+        "images": [
+          "assets/user-media/image-1.jpg",
+          "assets/user-media/image-4.jpg"
+        ],
+        "imageCount": 2,
+        "imageRatio": "portrait",
+        "metricCount": 3,
+        "focusEnabled": false,
+        "focusIndex": 0,
+        "showProgress": false,
+        "showDecorations": false,
+        "accentColor": "#86D62B"
+      }
+    },
+    {
+      "layout": "theme07_page015",
+      "props": {
+        "eyebrow": "增长问题",
+        "kicker": "核心判断",
+        "quoteLead": "好产品",
+        "quoteEm1": "为什么",
+        "quoteMid": "增长仍然",
+        "quoteEm2": "乏力",
+        "quoteTail": "？",
+        "source": "武汉驾到线上获客实践",
+        "conclusions": [],
+        "align": "center",
+        "showConclusions": false,
+        "conclusionCount": 0,
+        "showQuoteMark": false,
+        "showSource": false,
+        "showDecorations": false,
+        "accentColor": "#86D62B"
+      }
+    },
+    {
+      "layout": "theme07_page026",
+      "props": {
+        "eyebrow": "内容演进",
+        "title": "从发内容",
+        "titleTail": "到产品化表达",
+        "lead": "四次变化，不是为了更像网红，而是为了让用户更快理解、信任并咨询。",
+        "anchorLead": "演进顺序",
+        "anchorUnit": "01→04",
+        "anchorNote": "表达越来越接近成交",
+        "closing": "每一步都在降低用户理解成本",
+        "slots": [
+          {
+            "name": "01 内容起步",
+            "role": "先把真实活动发出来"
+          },
+          {
+            "name": "02 统一包装",
+            "role": "让账号形成稳定识别"
+          },
+          {
+            "name": "03 真人出镜",
+            "role": "用人物建立信任"
+          },
+          {
+            "name": "04 产品表达",
+            "role": "把内容连接到咨询"
+          }
+        ],
+        "images": [
+          "assets/user-media/1.png",
+          "assets/user-media/2.png",
+          "assets/user-media/3.png",
+          "assets/user-media/4.png"
+        ],
+        "imageCount": 4,
+        "imageRatio": "portrait",
+        "showLabels": true,
+        "focusEnabled": false,
+        "focusIndex": 0,
+        "showAnchor": true,
+        "showDecorations": false,
+        "accentColor": "#86D62B"
+      }
+    },
+    {
+      "layout": "theme07_page060",
+      "props": {
+        "eyebrow": "获客链路",
+        "marker": "获客链路",
+        "segment": "三段转化漏斗",
+        "title": "流量如何走向成交",
+        "titleTail": "从公域到私域",
+        "lead": "内容先带来看见，再通过评论和私信承接，最后进入微信完成需求匹配。",
+        "statLine": "示意链路｜不代表实际转化数据",
+        "closing": "逐层优化承接效率",
+        "funnelTitle": "公域触达 → 互动沟通 → 私域成交",
+        "stages": [
+          {
+            "name": "公域触达",
+            "value": 100,
+            "note": "短视频让目标用户先看见",
+            "conv": ""
+          },
+          {
+            "name": "互动沟通",
+            "value": 58,
+            "note": "评论与私信识别真实需求",
+            "conv": ""
+          },
+          {
+            "name": "私域成交",
+            "value": 26,
+            "note": "添加微信后完成产品匹配",
+            "conv": ""
+          }
+        ],
+        "metrics": [
+          {
+            "lbl": "关键动作",
+            "val": "评论",
+            "unit": "＋私信"
+          },
+          {
+            "lbl": "承接结果",
+            "val": "加微",
+            "unit": "再匹配"
+          }
+        ],
+        "stageCount": 3,
+        "metricCount": 2,
+        "showValues": false,
+        "focusEnabled": false,
+        "focusIndex": 0,
+        "showDecorations": false,
+        "accentColor": "#86D62B"
+      }
+    },
+    {
+      "layout": "theme07_page014",
+      "props": {
+        "eyebrow": "逐层优化",
+        "title": "同一条漏斗，逐层优化",
+        "sub": "提高动力、增加触点、降低阻力",
+        "lead": "不把希望压在一条爆款上，而是在每个节点做小幅改进。",
+        "closing": "小幅提升每一层，最终结果会被放大",
+        "timelineLabel": "持续优化",
+        "columns": [
+          {
+            "kind": "内容侧",
+            "en": "让用户愿意行动",
+            "items": [
+              {
+                "name": "提高动力",
+                "note": "标题与首屏先讲用户问题"
+              },
+              {
+                "name": "增加触点",
+                "note": "评论、私信及时承接"
+              },
+              {
+                "name": "降低理解",
+                "note": "用真实案例解释产品"
+              }
+            ]
+          },
+          {
+            "kind": "承接侧",
+            "en": "让沟通更容易",
+            "items": [
+              {
+                "name": "明确动作",
+                "note": "告诉用户下一步怎么做"
+              },
+              {
+                "name": "降低阻力",
+                "note": "减少添加微信的不确定"
+              },
+              {
+                "name": "匹配需求",
+                "note": "让产品与用户需求对应"
+              }
+            ]
+          }
+        ],
+        "nodes": [
+          {
+            "year": "动力",
+            "title": "愿意停留",
+            "note": "看完愿意问"
+          },
+          {
+            "year": "触点",
+            "title": "有人承接",
+            "note": "问了有人接"
+          },
+          {
+            "year": "阻力",
+            "title": "顺利成交",
+            "note": "聊了能匹配"
+          }
+        ],
+        "columnCount": 2,
+        "itemCount": 3,
+        "focusEnabled": false,
+        "focusIndex": 0,
+        "showTimeline": true,
+        "nodeCount": 3,
+        "showDecorations": false,
+        "accentColor": "#86D62B"
+      }
+    },
+    {
+      "layout": "theme07_page055",
+      "props": {
+        "eyebrow": "整体回顾",
+        "kicker": "从内容运营走向业务结果",
+        "quoteLead": "内容不是终点",
+        "quoteEm": "成交链路",
+        "quoteTail": "才是系统",
+        "source": "武汉驾到线上运营实践",
+        "pillars": [
+          {
+            "glyph": "01",
+            "zh": "明确目标",
+            "en": "围绕业务结果",
+            "note": "不只追求播放与粉丝"
+          },
+          {
+            "glyph": "02",
+            "zh": "搭建链路",
+            "en": "连接公域私域",
+            "note": "把真实需求承接下来"
+          },
+          {
+            "glyph": "03",
+            "zh": "逐层优化",
+            "en": "提升转化效率",
+            "note": "让每一步更顺畅"
+          }
+        ],
+        "align": "center",
+        "showPillars": true,
+        "pillarCount": 3,
+        "focusEnabled": false,
+        "focusIndex": 0,
+        "showQuoteMark": false,
+        "showSource": false,
+        "showDecorations": false,
+        "accentColor": "#86D62B"
+      }
+    },
+    {
+      "layout": "theme07_page013",
+      "props": {
+        "eyebrow": "感谢",
+        "title": "谢谢",
+        "sub": "现场交流",
+        "lead": "期待与大家一起讨论内容、获客与成交。",
+        "chainTitle": "扫码交流",
+        "closing": "主讲人：孙轩",
+        "imageRatio": "square",
+        "risks": [
+          {
+            "node": "01",
+            "title": "内容",
+            "desc": "从真实业务问题出发"
+          },
+          {
+            "node": "02",
+            "title": "增长",
+            "desc": "用线上运营连接成交"
+          }
+        ],
+        "images": [
+          "assets/user-media/media.jpg"
+        ],
+        "cardCount": 2,
+        "imageCount": 1,
+        "showSecondary": false,
+        "focusEnabled": false,
+        "focusIndex": 0,
+        "showDecorations": false,
+        "accentColor": "#86D62B"
+      }
+    }
+  ]
+}

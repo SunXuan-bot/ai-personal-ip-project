@@ -1,0 +1,30 @@
+{
+  "title": "不做网红，做生意",
+  "goal": "面向 OPC 社区分享武汉驾到通过短视频和线上运营实现获客与成交的完整链路",
+  "themePack": "theme07",
+  "pageCount": 9,
+  "part": {
+    "index": 2,
+    "total": 2,
+    "startSlide": 6,
+    "endSlide": 9
+  },
+  "slides": [
+    {
+      "layout": "theme07_page012",
+      "props": {}
+    },
+    {
+      "layout": "theme07_page051",
+      "props": {}
+    },
+    {
+      "layout": "theme07_page052",
+      "props": {}
+    },
+    {
+      "layout": "theme07_page068",
+      "props": {}
+    }
+  ]
+}

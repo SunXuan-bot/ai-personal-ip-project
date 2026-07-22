@@ -1,0 +1,30 @@
+{
+  "title": "不做网红，做生意",
+  "goal": "面向 OPC 社区分享武汉驾到从内容表达走向业务结果的增长方法",
+  "themePack": "theme11",
+  "pageCount": 9,
+  "part": {
+    "index": 2,
+    "total": 2,
+    "startSlide": 6,
+    "endSlide": 9
+  },
+  "slides": [
+    {
+      "layout": "theme11_page051",
+      "props": {}
+    },
+    {
+      "layout": "theme11_page022",
+      "props": {}
+    },
+    {
+      "layout": "theme11_page054",
+      "props": {}
+    },
+    {
+      "layout": "theme11_page041",
+      "props": {}
+    }
+  ]
+}

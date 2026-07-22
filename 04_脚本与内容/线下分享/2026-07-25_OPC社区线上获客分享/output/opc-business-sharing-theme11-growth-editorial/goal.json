@@ -1,0 +1,490 @@
+{
+  "title": "不做网红，做生意",
+  "goal": "面向 OPC 社区，以武汉驾到为案例，用增长叙事拆解内容、获客、承接与成交",
+  "audience": "OPC 社区创业者、独立服务者和小团队经营者",
+  "owner": "孙轩",
+  "randomSeed": "theme11-20260723-opc-growth-editorial",
+  "pageCount": 9,
+  "themePack": "theme11",
+  "slides": [
+    {
+      "layout": "theme11_page004",
+      "props": {
+        "wordmarkLabel": "主办：壹企云栖人工智能OPC社区",
+        "wordmarkSub": "",
+        "railText": "",
+        "ghostMark": "OPC",
+        "kickerText": "主讲人：孙轩｜指导：珞南街道办事处",
+        "headlineHtml": "不做网红<br><b>做生意</b>",
+        "ledeHtml": "通过线上运营<br>实现销售目标",
+        "arrowText": "通过线上运营实现销售目标",
+        "ribbonCap": "孙轩",
+        "stats": [
+          {
+            "v": "主办单位",
+            "l": "壹企云栖人工智能OPC社区"
+          },
+          {
+            "v": "指导单位",
+            "l": "珞南街道办事处"
+          },
+          {
+            "v": "主讲人",
+            "l": "孙轩"
+          }
+        ],
+        "images": [
+          "assets/user-media/image-6.jpg"
+        ],
+        "surface": "paper",
+        "showKicker": true,
+        "showLede": false,
+        "showArrow": true,
+        "imageCount": 1,
+        "statCount": 3,
+        "showGhostMark": false,
+        "showScaffold": true
+      }
+    },
+    {
+      "layout": "theme11_page017",
+      "props": {
+        "wordmarkLabel": "个人介绍",
+        "wordmarkSub": "",
+        "ghostMark": "02",
+        "markGlyph": "人",
+        "railText": "",
+        "navItems": [
+          "个人介绍"
+        ],
+        "navCurrent": 2,
+        "ixNo": "02",
+        "ixLabel": "个人介绍",
+        "quoteHtml": "<b>湖北广电</b>的内容表达，<b>斗鱼直播</b>的平台运营，<b>武汉驾到</b>的业务实践。",
+        "ratingText": "真实经历",
+        "attrName": "孙轩",
+        "attrTitle": "主讲人",
+        "metricValue": "3",
+        "metricLabel": "湖北广电｜斗鱼直播｜武汉驾到",
+        "capName": "孙轩",
+        "capSuffix": "",
+        "capSub": "内容与增长实践",
+        "metaLeft": "从内容到业务",
+        "metaMid": "个人介绍",
+        "images": [
+          "assets/user-media/20260114091657-190-228.jpg"
+        ],
+        "surface": "paper",
+        "avatarCount": true,
+        "portraitShape": "square",
+        "showRating": false,
+        "showMetric": false,
+        "showKicker": true,
+        "showScaffold": true,
+        "showMeta": false
+      }
+    },
+    {
+      "layout": "theme11_page022",
+      "props": {
+        "wordmarkLabel": "武汉驾到",
+        "wordmarkSub": "",
+        "ghostMark": "03",
+        "railText": "",
+        "navItems": [
+          "业务案例"
+        ],
+        "navCurrent": 3,
+        "ixNo": "03",
+        "ixLabel": "武汉驾到",
+        "lead": "",
+        "headingHtml": "武汉驾到<br><b>是什么生意</b>",
+        "bodyText": "把线路、活动、领队与服务，组织成用户愿意购买的旅行产品。",
+        "primaryTag": "自驾旅行",
+        "secondaryTag": "线上获客",
+        "decoNumber": "03",
+        "metaLeft": "真实业务案例",
+        "metaMid": "武汉驾到",
+        "pts": [
+          {
+            "t": "产品",
+            "d": "可购买的自驾线路"
+          },
+          {
+            "t": "用户",
+            "d": "重体验的家庭客群"
+          },
+          {
+            "t": "增长",
+            "d": "短视频连接新客户"
+          }
+        ],
+        "images": [
+          "assets/user-media/image-1.jpg",
+          "assets/user-media/image-4.jpg"
+        ],
+        "surface": "paper",
+        "imageCount": 2,
+        "showPoints": true,
+        "pointCount": 3,
+        "showCaptions": true,
+        "showNumber": false,
+        "showKicker": true,
+        "showGhostMark": false,
+        "showScaffold": true,
+        "showMeta": false
+      }
+    },
+    {
+      "layout": "theme11_page044",
+      "props": {
+        "wordmarkLabel": "增长问题",
+        "wordmarkSub": "",
+        "chapterNo": "04",
+        "footerBrandLabel": "武汉驾到",
+        "railText": "",
+        "navItems": [
+          "增长问题"
+        ],
+        "navCurrent": 4,
+        "ixNo": "04",
+        "ixLabel": "增长问题",
+        "leadEnPrefix": "",
+        "leadZh": "核心判断",
+        "headingHtml": "好产品，为什么增长仍然乏力？",
+        "sub": "产品力已经具备，真正缺少的是一条可持续放大的线上获客链路。",
+        "metaMid": "核心判断",
+        "agenda": [
+          {
+            "tt": "产品力",
+            "en": "已有基础",
+            "cur": true
+          }
+        ],
+        "surface": "ink",
+        "showNumber": false,
+        "showSub": true,
+        "showAgenda": false,
+        "agendaCount": 1,
+        "agendaCurrent": 0,
+        "showKicker": true,
+        "showGhostMark": false,
+        "showScaffold": true,
+        "showMeta": false
+      }
+    },
+    {
+      "layout": "theme11_page076",
+      "props": {
+        "wordmarkLabel": "内容演进",
+        "wordmarkSub": "",
+        "ghostMark": "05",
+        "railText": "",
+        "navItems": [
+          "内容演进"
+        ],
+        "navCurrent": 5,
+        "ixNo": "05",
+        "ixLabel": "内容演进",
+        "eyebrowNo": "内容演进",
+        "eyebrowEn": "四个阶段",
+        "headingHtml": "内容如何<br><b>一步步接近成交</b>",
+        "noteHtml": "",
+        "metaLeft": "01→04",
+        "metaMid": "内容演进",
+        "bands": [
+          {
+            "tag": "01",
+            "t": "内容起步",
+            "c": "先把真实活动发出来",
+            "v": "看见",
+            "l": "真实"
+          },
+          {
+            "tag": "02",
+            "t": "统一包装",
+            "c": "让账号形成稳定识别",
+            "v": "记住",
+            "l": "识别"
+          },
+          {
+            "tag": "03",
+            "t": "真人出镜",
+            "c": "用人物建立持续信任",
+            "v": "信任",
+            "l": "人物"
+          },
+          {
+            "tag": "04",
+            "t": "产品表达",
+            "c": "把内容连接到咨询场景",
+            "v": "咨询",
+            "l": "业务"
+          }
+        ],
+        "images": [
+          "assets/user-media/1.png",
+          "assets/user-media/2.png",
+          "assets/user-media/3.png",
+          "assets/user-media/4.png"
+        ],
+        "surface": "paper",
+        "bandCount": 4,
+        "emphasis": true,
+        "emphasisIndex": 3,
+        "showIndex": true,
+        "showTags": true,
+        "showCaptions": true,
+        "showKpi": false,
+        "showKicker": true,
+        "showGhostMark": false,
+        "showScaffold": true,
+        "showMeta": false
+      }
+    },
+    {
+      "layout": "theme11_page015",
+      "props": {
+        "wordmarkLabel": "获客链路",
+        "wordmarkSub": "",
+        "ghostMark": "06",
+        "railText": "",
+        "navItems": [
+          "获客链路"
+        ],
+        "navCurrent": 6,
+        "ixNo": "06",
+        "ixLabel": "获客链路",
+        "lead": "",
+        "headingHtml": "流量如何一步步<br><b>走向成交</b>",
+        "lede": "每一层都要有清晰动作与承接",
+        "metaLeft": "从公域触达到业务结果",
+        "metaMid": "成交漏斗",
+        "stages": [
+          {
+            "name": "公域流量",
+            "en": "看见内容",
+            "v": "100",
+            "rate": "100%"
+          },
+          {
+            "name": "评论线索",
+            "en": "表达需求",
+            "v": "40",
+            "rate": "40%"
+          },
+          {
+            "name": "主动私信",
+            "en": "建立沟通",
+            "v": "20",
+            "rate": "20%"
+          },
+          {
+            "name": "添加微信",
+            "en": "进入私域",
+            "v": "10",
+            "rate": "10%"
+          },
+          {
+            "name": "引导成交",
+            "en": "完成匹配",
+            "v": "3",
+            "rate": "3%"
+          }
+        ],
+        "surface": "paper",
+        "stageCount": 5,
+        "emphasis": true,
+        "emphasisIndex": 4,
+        "showRates": true,
+        "showKicker": true,
+        "showLede": true,
+        "showGhostMark": false,
+        "showScaffold": true,
+        "showMeta": false
+      }
+    },
+    {
+      "layout": "theme11_page021",
+      "props": {
+        "wordmarkLabel": "逐层优化",
+        "wordmarkSub": "",
+        "ghostMark": "07",
+        "railText": "",
+        "navItems": [
+          "逐层优化"
+        ],
+        "navCurrent": 7,
+        "ixNo": "07",
+        "ixLabel": "逐层优化",
+        "lead": "",
+        "headingHtml": "同一条漏斗<br><b>逐层优化</b>",
+        "lede": "每一步更顺，最终业务结果就会被放大",
+        "metaLeft": "持续优化",
+        "metaMid": "转化效率",
+        "miles": [
+          {
+            "day": "01",
+            "t": "提高动力",
+            "en": "愿意停留",
+            "d": "标题与首屏先讲用户问题"
+          },
+          {
+            "day": "02",
+            "t": "增加触点",
+            "en": "及时互动",
+            "d": "评论与私信都有人承接"
+          },
+          {
+            "day": "03",
+            "t": "主动沟通",
+            "en": "继续推进",
+            "d": "把明确需求带入下一步"
+          },
+          {
+            "day": "04",
+            "t": "降低阻力",
+            "en": "进入私域",
+            "d": "减少添加微信的不确定"
+          },
+          {
+            "day": "05",
+            "t": "匹配需求",
+            "en": "完成成交",
+            "d": "让产品与真实需求对应"
+          }
+        ],
+        "surface": "ember",
+        "milestoneCount": 5,
+        "emphasis": true,
+        "emphasisIndex": 4,
+        "showAxis": true,
+        "showKicker": true,
+        "showLede": true,
+        "showGhostMark": false,
+        "showScaffold": true,
+        "showMeta": false
+      }
+    },
+    {
+      "layout": "theme11_page039",
+      "props": {
+        "wordmarkLabel": "业务闭环",
+        "wordmarkSub": "",
+        "ghostMark": "08",
+        "railText": "",
+        "navItems": [
+          "业务闭环"
+        ],
+        "navCurrent": 8,
+        "ixNo": "08",
+        "ixLabel": "业务闭环",
+        "lead": "",
+        "headingHtml": "从内容运营<br><b>走向业务结果</b>",
+        "lede": "明确目标、搭建链路、逐层优化",
+        "metaLeft": "目标×链路×优化",
+        "metaMid": "业务闭环",
+        "segs": [
+          {
+            "name": "提高动力",
+            "en": "内容"
+          },
+          {
+            "name": "增加触点",
+            "en": "承接"
+          },
+          {
+            "name": "降低阻力",
+            "en": "转化"
+          }
+        ],
+        "periods": [
+          {
+            "x": "看见",
+            "vals": [
+              82,
+              20,
+              10
+            ]
+          },
+          {
+            "x": "评论",
+            "vals": [
+              75,
+              55,
+              20
+            ]
+          },
+          {
+            "x": "私信",
+            "vals": [
+              65,
+              60,
+              35
+            ]
+          },
+          {
+            "x": "加微",
+            "vals": [
+              55,
+              70,
+              65
+            ]
+          },
+          {
+            "x": "成交",
+            "vals": [
+              45,
+              75,
+              80
+            ]
+          }
+        ],
+        "surface": "ink",
+        "periodCount": 5,
+        "segmentCount": 3,
+        "showTotals": false,
+        "showGrid": true,
+        "showLegend": true,
+        "emphasis": true,
+        "showKicker": true,
+        "showLede": true,
+        "showGhostMark": false,
+        "showScaffold": true,
+        "showMeta": false
+      }
+    },
+    {
+      "layout": "theme11_page084",
+      "props": {
+        "wordmarkLabel": "感谢",
+        "wordmarkSub": "",
+        "ghostMark": "09",
+        "railText": "",
+        "navItems": [
+          "感谢"
+        ],
+        "navCurrent": 9,
+        "ixNo": "09",
+        "ixLabel": "感谢",
+        "plateIndex": "",
+        "plateTitleHtml": "感谢<br><b>现场交流</b>",
+        "plateMeta": "扫码交流",
+        "metaLeft": "主讲人：孙轩",
+        "metaMid": "武汉驾到",
+        "images": [
+          "assets/user-media/media.jpg"
+        ],
+        "surface": "paper",
+        "showFrameLine": true,
+        "showPlate": true,
+        "showIndex": false,
+        "showMeta_meta": true,
+        "showKicker": true,
+        "showGhostMark": false,
+        "showScaffold": true,
+        "showMeta": false
+      }
+    }
+  ]
+}
